@@ -25,6 +25,7 @@
   },
   "dependencies": {
     "express": "^4.17.2",
+    "jasmine": "^3.10.0",
     "nodemon": "^2.0.15"
   }
 }
