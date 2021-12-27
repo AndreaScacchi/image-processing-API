@@ -7,7 +7,10 @@
     "test": "tests"
   },
   "scripts": {
-    "build": "npx tsc"
+    "test": "jasmine",
+    "build": "npx tsc",
+    "dev": "nodemon ./build/index",
+    "start": "node ./build/index"
   },
   "keywords": [],
   "author": "Andrea Scacchi",
