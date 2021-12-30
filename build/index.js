@@ -1,4 +1,6 @@
 "use strict";
-var myName = 'Andy';
-var hello = function (userName) { return "hello, ".concat(userName); };
-console.log(hello(myName));
+Object.defineProperty(exports, "__esModule", { value: true });
+var myFunc = function (num) {
+    return num * num;
+};
+exports.default = myFunc;
