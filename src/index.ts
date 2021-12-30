@@ -1,4 +1,5 @@
-const myName = 'Andy';
-const hello = (userName: string): string => `hello, ${userName}`;
+const myFunc = (num: number) : number => {
+    return num * num;
+};
 
-console.log(hello(myName));
+export default myFunc;
