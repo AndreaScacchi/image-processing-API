@@ -3,7 +3,7 @@ const app = express();
 const port = 3000;
 
 // define a route handler for the default home page
-app.get('/api', (req, res) => {
+app.get('/', (req, res) => {
     res.send('Server working');
 });
 
