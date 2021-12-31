@@ -4,6 +4,6 @@ import express from 'express';
 const routes = express.Router();
 
 // define endpoint
-app.get('/', (req, res) => {
+routes.get('/', (req, res) => {
     res.send('NASA explore the Universe🌎🪐☄️🧑‍🚀🔭');
 });
