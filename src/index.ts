@@ -1,6 +1,9 @@
 import express from 'express';
+import path from 'path';
 const app = express();
 const port = 5000;
+
+app.use(express.static(path.join(__dirname, '/images')));
 
 // define a route handler for the default home page
 app.get('/', (req, res) => {
