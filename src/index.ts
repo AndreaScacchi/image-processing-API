@@ -4,7 +4,7 @@ const port = 5000;
 
 // define a route handler for the default home page
 app.get('/', (req, res) => {
-    res.send('Server working');
+    res.send('Hello World');
 });
 
 // start the express server

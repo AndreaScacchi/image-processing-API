@@ -8,7 +8,7 @@ var app = (0, express_1.default)();
 var port = 5000;
 // define a route handler for the default home page
 app.get('/', function (req, res) {
-    res.send('Server working');
+    res.send('Hello World');
 });
 // start the express server
 app.listen(port, function () {
