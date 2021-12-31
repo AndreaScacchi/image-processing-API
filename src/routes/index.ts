@@ -7,3 +7,5 @@ const routes = express.Router();
 routes.get('/', (req, res) => {
     res.send('NASA explore the Universe🌎🪐☄️🧑‍🚀🔭');
 });
+
+export default routes;
