@@ -7,8 +7,7 @@
     "test": "jasmine",
     "build": "npx tsc",
     "lint": "npx prettier --write ./src/**/* && npx eslint .src/**/*",
-    "dev": "nodemon ./build/index",
-    "start": "node ./build/index"
+    "start": "nodemon ./build/index"
   },
   "keywords": [],
   "author": "Andrea Scacchi",
