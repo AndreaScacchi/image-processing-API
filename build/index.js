@@ -14,3 +14,4 @@ app.get('/', function (req, res) {
 app.listen(port, function () {
     console.log("Server started at http://localhost:".concat(port));
 });
+exports.default = app;
