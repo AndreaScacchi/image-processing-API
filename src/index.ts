@@ -5,7 +5,7 @@ const port = 5000;
 
 app.use(express.static(path.join(__dirname, '/images')));
 
-// define a route handler for the default home page
+// define endpoint
 app.get('/', (req, res) => {
     res.send('NASA explore the Universe🌎🪐☄️🧑‍🚀🔭');
 });
