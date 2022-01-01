@@ -4,14 +4,11 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var express_1 = __importDefault(require("express"));
-var path_1 = __importDefault(require("path"));
+var index_1 = __importDefault(require("./routes/index"));
 var app = (0, express_1.default)();
 var port = 5000;
-app.use(express_1.default.static(path_1.default.join(__dirname, '/images')));
-// define a route handler for the default home page
-app.get('/', function (req, res) {
-    res.send('NASA explore the Universe🌎🪐☄️🧑‍🚀🔭');
-});
+// use the router object as middleware
+app.use('/routes', index_1.default);
 // start the express server
 app.listen(port, function () {
     console.log("Server started at http://localhost:".concat(port));
