@@ -1,11 +1,9 @@
 import express from 'express';
+import route from './route';
 
 // router object
 const routes = express.Router();
 
-// define endpoint
-routes.get('/', (req, res) => {
-    res.send('NASA explore the Universe🌎🪐☄️🧑‍🚀🔭');
-});
+routes.use('/route', route);
 
 export default routes;
