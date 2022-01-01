@@ -4,10 +4,8 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var express_1 = __importDefault(require("express"));
+var route_1 = __importDefault(require("./route"));
 // router object
 var routes = express_1.default.Router();
-// define endpoint
-routes.get('/', function (req, res) {
-    res.send('NASA explore the Universe🌎🪐☄️🧑‍🚀🔭');
-});
+routes.use('/route', route_1.default);
 exports.default = routes;
