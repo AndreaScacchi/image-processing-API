@@ -19,4 +19,4 @@ const getImage = async (imageName: string, width: number, height: number): Promi
         console.log(`error ${err}`);
     }
     return filePath;
-}
+};
