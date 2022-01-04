@@ -16,7 +16,7 @@ describe("Test endpoint responses", () => {
 		expect(response.status).toBe(404);
 	});
 	it("returns a 400 error", async () => {
-		const response = await request.get("/route?image=wrongName&height=500");
+		const response = await request.get("/route?image=santamonica&height=500");
 		expect(response.status).toBe(400);
 	});
 });
