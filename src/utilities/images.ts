@@ -26,6 +26,8 @@ const resizeImage = async (imageName: string, width: number, height: number): Pr
     const outputImages = path.join(__dirname, '../images/thumbs', `${imageName.toLowerCase()}(${width}x${height}).jpg`);
     
     try {
-
-    } catch {}
+        await fspromises.open(imagesPath, 'r');
+    } catch(err) {
+        console.log(`Error ${err}`);
+    }
 }
