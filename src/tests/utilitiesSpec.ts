@@ -1,7 +1,9 @@
 import path from 'path';
 import { getImage, resizeImage } from '../utilities/processImages';
 
-describe('Test the image', () => {
+
+
+describe('Test the image process', () => {
     beforeAll(async () => {
         await resizeImage('fjord', 200, 200);
     });
