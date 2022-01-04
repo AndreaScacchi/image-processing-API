@@ -46,3 +46,5 @@ const resizeImage = async (imageName: string, width: number, height: number): Pr
     }
     return outputImages;
 }
+
+export { getImage, resizeImage };
