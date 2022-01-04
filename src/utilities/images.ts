@@ -32,6 +32,11 @@ const resizeImage = async (imageName: string, width: number, height: number): Pr
     }
 
     try {
-
-    } catch (err) {}
+        await sharp(await fspromises.readFile()).resize({ width, height }).toFile(outputImages);
+        fspromises.close();
+    } catch (err) {
+        fspromises.close();
+        console.log(`Cannot resize the image: ${err}`);
+    }
+    return outputImages;
 }
