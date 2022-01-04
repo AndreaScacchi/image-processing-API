@@ -1,14 +1,18 @@
 import path from 'path';
 import { getImage, resizeImage } from '../utilities/processImages';
 
+describe('Test to find out if the file/image exist', async () => {
+    const rightPath = 'images/santamonica350x350.jpg';
+    const incorrectPath = 'images/santamonic350x350.jpg';
+})
 
 
 describe('Test the image process', () => {
     beforeAll(async () => {
-        await resizeImage('fjord', 200, 200);
+        await resizeImage('santamonica', 200, 200);
     });
     it('returns the image path', async () => {
-        const filePath = path.join(__dirname, "../../images/thumbs/", 'fjord(200x200).jpeg');
-        expect(await getImage('fjord', 200, 200)).toBe(filePath);
+        const filePath = path.join(__dirname, "../../images/thumbs/", 'santamonica(200x200).jpeg');
+        expect(await getImage('santamonica', 200, 200)).toBe(filePath);
     });
 });
