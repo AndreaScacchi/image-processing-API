@@ -20,3 +20,7 @@ const getImage = async (imageName: string, width: number, height: number): Promi
     }
     return filePath;
 };
+
+const resizeImage = async (imageName: string, width: number, height: number): Promise<String> => {
+    
+}
