@@ -1,9 +1,14 @@
 import path from 'path';
 import { getImage, resizeImage } from '../utilities/processImages';
+import checkFile from '../utilities/checkFile';
 
 describe('Test to find out if the file/image exist', async () => {
     const rightPath = 'images/santamonica350x350.jpg';
     const incorrectPath = 'images/santamonic350x350.jpg';
+
+    it('expecta that file exist', async () => {
+        const 
+    })
 })
 
 
