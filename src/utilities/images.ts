@@ -30,4 +30,8 @@ const resizeImage = async (imageName: string, width: number, height: number): Pr
     } catch(err) {
         console.log(`Error ${err}`);
     }
+
+    try {
+
+    } catch (err) {}
 }
