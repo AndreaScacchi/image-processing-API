@@ -11,7 +11,7 @@ describe("Test endpoint responses", () => {
 		const response = await request.get("/route?image=santamonica&width=500%height=500");
 		expect(response.status).toBe(200);
 	});
-	it("returns a 404 error", async () => {
+	it("returns a 404 error for invalid name image", async () => {
 		const response = await request.get("/route?image=wrongName&width=500%height=500");
 		expect(response.status).toBe(404);
 	});
