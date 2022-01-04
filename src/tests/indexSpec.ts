@@ -8,15 +8,15 @@ describe("Test endpoint responses", () => {
 		expect(response.status).toBe(200);
 	});
 	it('returns a correct response', async () => {
-		const response = await request.get("/route?image=fjord&width=250%height=250");
+		const response = await request.get("/route?image=santamonica&width=500%height=500");
 		expect(response.status).toBe(200);
 	});
 	it("returns a 404 error", async () => {
-		const response = await request.get("/route?image=wrongName&width=250%height=250");
+		const response = await request.get("/route?image=wrongName&width=500%height=500");
 		expect(response.status).toBe(404);
 	});
 	it("returns a 400 error", async () => {
-		const response = await request.get("/route?image=wrongName&height=250");
+		const response = await request.get("/route?image=wrongName&height=500");
 		expect(response.status).toBe(400);
 	});
 });
