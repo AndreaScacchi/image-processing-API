@@ -27,21 +27,19 @@ const getImage = async (imageName: string, width: number, height: number): Promi
 const resizeImage = async (imageName: string, width: number, height: number): Promise<String> => {
     const imagesPath = path.join(__dirname, '/images', `${imageName.toLowerCase()}(${width}x${height}).jpg`);
     const outputImages = path.join(__dirname, '../images/thumbs', `${imageName.toLowerCase()}(${width}x${height}).jpeg`);
-
+    let resizedImage: fspromises.FileHandle;
     
     try {
-        await fspromises.open(imagesPath, 'r');
-    } catch(err) {
-        if(err instanceof Error) {
-            console.log(`Specified image not found: ${err.message}`);
-        }
+        resizedImage = await fspromises.open(imagesPath, 'r');
+    } catch {
+        throw new Error("Cannot find the specified image!");
     }
 
     try {
-        await sharp(await fspromises.readFile()).resize({ width, height }).toFile(outputImages);
-        fspromises.close();
+        await sharp(await resizedImage.readFile()).resize({ width, height }).toFile(outputImages);
+        resizedImage.close();
     } catch (err) {
-        fspromises.close();
+        resizedImage.close();
         if(err instanceof Error) {
             console.log(`Cannot resize the image: ${err.message}`);
         }
