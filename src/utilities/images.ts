@@ -15,7 +15,11 @@ const getImage = async (imageName: string, width: number, height: number): Promi
     try {
         await fspromises.readFile(filePath, { flag: 'r' });
     } catch(err) {
-        console.log(`error ${err}`);
+        let errorMessage = 'Got an error trying to read the file!';
+        if(err instanceof Error) {
+            errorMessage = err.message;
+        }
+        console.log(errorMessage);
     }
     return filePath;
 };
