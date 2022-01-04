@@ -15,9 +15,9 @@ const getImage = async (imageName: string, width: number, height: number): Promi
     try {
         await fspromises.readFile(filePath, { flag: 'r' });
     } catch(err) {
-        let errorMessage = 'Got an error trying to read the file!';
+        let errorMessage = 'Got an error trying to read the file';
         if(err instanceof Error) {
-            errorMessage = err.message;
+            errorMessage = `${errorMessage}: ${err.message}`;
         }
         console.log(errorMessage);
     }
@@ -32,7 +32,9 @@ const resizeImage = async (imageName: string, width: number, height: number): Pr
     try {
         await fspromises.open(imagesPath, 'r');
     } catch(err) {
-        console.log(`Error ${err}`);
+        if(err instanceof Error) {
+            console.log(`Specified image not found: ${err.message}`);
+        }
     }
 
     try {
@@ -40,7 +42,9 @@ const resizeImage = async (imageName: string, width: number, height: number): Pr
         fspromises.close();
     } catch (err) {
         fspromises.close();
-        console.log(`Cannot resize the image: ${err}`);
+        if(err instanceof Error) {
+            console.log(`Cannot resize the image: ${err.message}`);
+        }
     }
     return outputImages;
 }
