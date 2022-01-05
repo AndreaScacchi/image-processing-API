@@ -35,8 +35,4 @@ route.get('/', async (req: express.Request, res: express.Response): Promise<void
     }
 });
 
-
-
-
-
 export default route;
