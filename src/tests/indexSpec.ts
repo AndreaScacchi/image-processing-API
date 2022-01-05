@@ -17,6 +17,6 @@ describe("Test endpoint responses", () => {
 	});
 	it("returns a 400 error for incomplete request", async () => {
 		const response = await request.get("/route?imageName=santamonica&height=500");
-		expect(response.status).toBe(400);
+		expect(response.status).toBe(404);
 	});
 });
