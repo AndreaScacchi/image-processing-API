@@ -25,9 +25,15 @@ route.get('/', async (req: express.Request, res: express.Response): Promise<void
                 height
             );
             res.status(200).sendFile(filePath);
-        } catch {}
+        } catch(err) {
+            if(err instanceof Error) {
+                res.status(404).send('Provide a valid image, with a valid width and height');
+            } else {
+                res.send('An error occurred when resize the image');
+            }
+        }
     }
-})
+});
 
 
 
