@@ -10,7 +10,7 @@ route.get('/', async (req: express.Request, res: express.Response): Promise<void
     );
     
     if(image) {
-        res.sendFile(image);
+        res.status(200).sendFile(image);
     } else {
         try {
             const width = parseInt(req.query.width as string);
