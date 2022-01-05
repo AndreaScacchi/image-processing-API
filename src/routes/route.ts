@@ -19,6 +19,12 @@ route.get('/', async (req: express.Request, res: express.Response): Promise<void
                 res.status(400).send('An error occurred with width or height');
                 return;
             }
+            const filePath = await resizeImage(
+                req.query.resizedImage as string,
+                width,
+                height
+            );
+            res.status(200).sendFile(filePath);
         } catch {}
     }
 })
