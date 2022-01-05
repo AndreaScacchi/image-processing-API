@@ -46,7 +46,12 @@ route.get('/', function (req, res) { return __awaiter(void 0, void 0, void 0, fu
     var image, width, height, filePath, err_1;
     return __generator(this, function (_a) {
         switch (_a.label) {
-            case 0: return [4 /*yield*/, (0, processImages_1.getImage)(req.query.imageName, parseInt(req.query.width), parseInt(req.query.height))];
+            case 0:
+                if (!req.query.imageName || !req.query.width || !req.query.height) {
+                    res.status(400).send('Incorrect request!');
+                    return [2 /*return*/];
+                }
+                return [4 /*yield*/, (0, processImages_1.getImage)(req.query.imageName, parseInt(req.query.width), parseInt(req.query.height))];
             case 1:
                 image = _a.sent();
                 if (!image) return [3 /*break*/, 2];
