@@ -15,7 +15,7 @@ route.get('/', async (req: express.Request, res: express.Response): Promise<void
         try {
             const width = parseInt(req.query.width as string);
             const height = parseInt(req.query.height as string);
-            if(isNaN(width) || isNaN(height)) {
+            if(!width || !height) {
                 res.status(400).send('An error occurred with width or height');
                 return;
             }
