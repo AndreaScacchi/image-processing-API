@@ -47,7 +47,7 @@ describe('Test to find out if the file/image exist', function () { return __awai
     return __generator(this, function (_a) {
         rightPath = 'images/santamonica350x350.jpg';
         incorrectPath = 'images/santamonic350x350.jpg';
-        it('expecta that file exist', function () { return __awaiter(void 0, void 0, void 0, function () {
+        it('expects that file exist', function () { return __awaiter(void 0, void 0, void 0, function () {
             var fileResult;
             return __generator(this, function (_a) {
                 switch (_a.label) {
