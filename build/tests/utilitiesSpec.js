@@ -45,8 +45,8 @@ var checkFile_1 = __importDefault(require("../utilities/checkFile"));
 describe('Test to find out if the file/image exist', function () { return __awaiter(void 0, void 0, void 0, function () {
     var rightPath, incorrectPath;
     return __generator(this, function (_a) {
-        rightPath = 'images/santamonica350x350.jpg';
-        incorrectPath = 'images/santamonic350x350.jpg';
+        rightPath = 'images/santamonica200x200.jpg';
+        incorrectPath = 'images/santamonic200x200.jpg';
         it('expects that file exist', function () { return __awaiter(void 0, void 0, void 0, function () {
             var fileResult;
             return __generator(this, function (_a) {
