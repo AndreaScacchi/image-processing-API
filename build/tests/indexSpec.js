@@ -86,7 +86,7 @@ describe("Test endpoint responses", function () {
                 case 0: return [4 /*yield*/, request.get("/route?imageName=santamonica&height=500")];
                 case 1:
                     response = _a.sent();
-                    expect(response.status).toBe(400);
+                    expect(response.status).toBe(404);
                     return [2 /*return*/];
             }
         });
