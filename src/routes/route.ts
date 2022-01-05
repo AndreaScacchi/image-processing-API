@@ -3,6 +3,11 @@ import { getImage, resizeImage } from '../utilities/processImages';
 const route = express.Router();
 
 route.get('/', async (req: express.Request, res: express.Response): Promise<void> => {
+    if(!req.query.imageName || !req.query.width || !req.query.height) {
+        res.status(400).send('Incorrect request!');
+        return;
+    }
+
     const image = await getImage(
         req.query.imageName as string,
         parseInt(req.query.width as string),
