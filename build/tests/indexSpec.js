@@ -55,11 +55,11 @@ describe("Test endpoint responses", function () {
             }
         });
     }); });
-    it('returns a correct response', function () { return __awaiter(void 0, void 0, void 0, function () {
+    it('returns a valid response', function () { return __awaiter(void 0, void 0, void 0, function () {
         var response;
         return __generator(this, function (_a) {
             switch (_a.label) {
-                case 0: return [4 /*yield*/, request.get("/route?image=fjord&width=250%height=250")];
+                case 0: return [4 /*yield*/, request.get("/route?imageName=santamonica&width=500%height=500")];
                 case 1:
                     response = _a.sent();
                     expect(response.status).toBe(200);
@@ -67,11 +67,11 @@ describe("Test endpoint responses", function () {
             }
         });
     }); });
-    it("returns a 404 error", function () { return __awaiter(void 0, void 0, void 0, function () {
+    it("returns a 404 error for invalid name image", function () { return __awaiter(void 0, void 0, void 0, function () {
         var response;
         return __generator(this, function (_a) {
             switch (_a.label) {
-                case 0: return [4 /*yield*/, request.get("/route?image=wrongName&width=250%height=250")];
+                case 0: return [4 /*yield*/, request.get("/route?imageName=wrongName&width=500%height=500")];
                 case 1:
                     response = _a.sent();
                     expect(response.status).toBe(404);
@@ -79,11 +79,11 @@ describe("Test endpoint responses", function () {
             }
         });
     }); });
-    it("returns a 400 error", function () { return __awaiter(void 0, void 0, void 0, function () {
+    it("returns a 400 error for incomplete request", function () { return __awaiter(void 0, void 0, void 0, function () {
         var response;
         return __generator(this, function (_a) {
             switch (_a.label) {
-                case 0: return [4 /*yield*/, request.get("/route?image=wrongName&height=250")];
+                case 0: return [4 /*yield*/, request.get("/route?imageName=santamonica&height=500")];
                 case 1:
                     response = _a.sent();
                     expect(response.status).toBe(400);
