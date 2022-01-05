@@ -8,15 +8,15 @@ describe("Test endpoint responses", () => {
 		expect(response.status).toBe(200);
 	});
 	it('returns a valid response', async () => {
-		const response = await request.get("/route?image=santamonica&width=500%height=500");
+		const response = await request.get("/route?imageName=santamonica&width=500%height=500");
 		expect(response.status).toBe(200);
 	});
 	it("returns a 404 error for invalid name image", async () => {
-		const response = await request.get("/route?image=wrongName&width=500%height=500");
+		const response = await request.get("/route?imageName=wrongName&width=500%height=500");
 		expect(response.status).toBe(404);
 	});
 	it("returns a 400 error for incomplete request", async () => {
-		const response = await request.get("/route?image=santamonica&height=500");
+		const response = await request.get("/route?imageName=santamonica&height=500");
 		expect(response.status).toBe(400);
 	});
 });
