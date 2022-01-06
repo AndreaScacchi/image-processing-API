@@ -90,7 +90,7 @@ describe('Test the image process', function () {
         return __generator(this, function (_b) {
             switch (_b.label) {
                 case 0:
-                    filePath = path_1.default.join(__dirname, "build/images", 'santamonica(200x200).jpg');
+                    filePath = path_1.default.join(__dirname, "./build/images", 'santamonica(200x200).jpg');
                     _a = expect;
                     return [4 /*yield*/, (0, processImages_1.getImage)('santamonica', 200, 200)];
                 case 1:
