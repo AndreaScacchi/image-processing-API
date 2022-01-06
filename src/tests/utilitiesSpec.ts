@@ -3,8 +3,8 @@ import { getImage, resizeImage } from '../utilities/processImages';
 import checkFile from '../utilities/checkFile';
 
 describe('Test to find out if the file/image exist', async () => {
-    const rightPath = './images/santamonica200x200.jpg';
-    const incorrectPath = './images/santamonic200x200.jpg';
+    const rightPath = './images/full/santamonica200x200.jpg';
+    const incorrectPath = './images/full/santamonic200x200.jpg';
 
     it('expects that file exist', async () => {
         const fileResult = await checkFile(rightPath);
@@ -23,7 +23,7 @@ describe('Test the image process', () => {
         await resizeImage('santamonica', 200, 200);
     });
     it('returns the image path', async () => {
-        const filePath = path.join(__dirname, "./build/images/", 'santamonica(200x200).jpg');
+        const filePath = path.join(__dirname, "./images/thumb/", 'santamonica(200x200).jpg');
         expect(await getImage('santamonica', 200, 200)).toBe(filePath);
     });
 });
