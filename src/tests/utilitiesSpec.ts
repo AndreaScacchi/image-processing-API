@@ -23,7 +23,7 @@ describe('Test the image process', () => {
         await resizeImage('santamonica', 200, 200);
     });
     it('returns the image path', async () => {
-        const filePath = path.join(__dirname, "./build/images", 'santamonica(200x200).jpg');
+        const filePath = path.join(__dirname, "./build/images/", 'santamonica(200x200).jpg');
         expect(await getImage('santamonica', 200, 200)).toBe(filePath);
     });
 });
