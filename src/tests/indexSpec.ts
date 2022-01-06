@@ -10,6 +10,11 @@ describe("Test endpoint responses", () => {
 });
 
 describe("Test if iamges are resized", () => {
+	let originalTimeout;
+	beforeEach( () => {
+		originalTimeout = jasmine.DEFAULT_TIMEOUT_INTERVAL;
+		jasmine.DEFAULT_TIMEOUT_INTERVAL = 10000;
+	})
 	it("returns a valid response", async () => {
 		const response = await request.get("/route?imageName=santamonica&width=500%height=500");
 		expect(response.status).toBe(200);
