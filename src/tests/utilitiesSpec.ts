@@ -4,7 +4,7 @@ import checkFile from '../utilities/checkFile';
 
 describe('Test to find out if the file/image exist', async () => {
     const rightPath = './images/santamonica200x200.jpg';
-    const incorrectPath = 'images/santamonic200x200.jpg';
+    const incorrectPath = './images/santamonic200x200.jpg';
 
     it('expects that file exist', async () => {
         const fileResult = await checkFile(rightPath);
