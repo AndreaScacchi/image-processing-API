@@ -45,8 +45,8 @@ var checkFile_1 = __importDefault(require("../utilities/checkFile"));
 describe('Test to find out if the file/image exist', function () { return __awaiter(void 0, void 0, void 0, function () {
     var rightPath, incorrectPath;
     return __generator(this, function (_a) {
-        rightPath = './images/santamonica200x200.jpg';
-        incorrectPath = './images/santamonic200x200.jpg';
+        rightPath = './images/full/santamonica200x200.jpg';
+        incorrectPath = './images/full/santamonic200x200.jpg';
         it('expects that file exist', function () { return __awaiter(void 0, void 0, void 0, function () {
             var fileResult;
             return __generator(this, function (_a) {
@@ -90,7 +90,7 @@ describe('Test the image process', function () {
         return __generator(this, function (_b) {
             switch (_b.label) {
                 case 0:
-                    filePath = path_1.default.join(__dirname, "./build/images/", 'santamonica(200x200).jpg');
+                    filePath = path_1.default.join(__dirname, "./images/thumb/", 'santamonica(200x200).jpg');
                     _a = expect;
                     return [4 /*yield*/, (0, processImages_1.getImage)('santamonica', 200, 200)];
                 case 1:
