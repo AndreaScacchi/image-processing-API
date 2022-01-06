@@ -57,6 +57,11 @@ describe("Test endpoint responses", function () {
     }); });
 });
 describe("Test if iamges are resized", function () {
+    var originalTimeout;
+    beforeEach(function () {
+        originalTimeout = jasmine.DEFAULT_TIMEOUT_INTERVAL;
+        jasmine.DEFAULT_TIMEOUT_INTERVAL = 10000;
+    });
     it("returns a valid response", function () { return __awaiter(void 0, void 0, void 0, function () {
         var response;
         return __generator(this, function (_a) {
