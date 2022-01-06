@@ -48,7 +48,7 @@ var getImage = function (imageName, width, height) { return __awaiter(void 0, vo
     return __generator(this, function (_b) {
         switch (_b.label) {
             case 0:
-                imagesDirectory = path_1.default.join(__dirname, '/images');
+                imagesDirectory = path_1.default.join(__dirname, '/images/');
                 filePath = path_1.default.join(imagesDirectory, "".concat(imageName.toLowerCase(), "(").concat(width, "x").concat(height, ").jpg"));
                 _b.label = 1;
             case 1:
