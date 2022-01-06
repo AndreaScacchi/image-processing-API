@@ -46,7 +46,7 @@ route.get('/', function (req, res) { return __awaiter(void 0, void 0, void 0, fu
     var image, width, height, filePath, err_1;
     return __generator(this, function (_a) {
         switch (_a.label) {
-            case 0: return [4 /*yield*/, (0, processImages_1.getImage)(req.query.resizedImage, parseInt(req.query.width), parseInt(req.query.height))];
+            case 0: return [4 /*yield*/, (0, processImages_1.getImage)(req.query.imageName, parseInt(req.query.width), parseInt(req.query.height))];
             case 1:
                 image = _a.sent();
                 if (!image) return [3 /*break*/, 2];
@@ -60,7 +60,7 @@ route.get('/', function (req, res) { return __awaiter(void 0, void 0, void 0, fu
                     res.status(400).send('An error occurred with width or height');
                     return [2 /*return*/];
                 }
-                return [4 /*yield*/, (0, processImages_1.resizeImage)(req.query.resizedImage, width, height)];
+                return [4 /*yield*/, (0, processImages_1.resizeImage)(req.query.imageName, width, height)];
             case 3:
                 filePath = _a.sent();
                 res.status(200).sendFile(filePath);
