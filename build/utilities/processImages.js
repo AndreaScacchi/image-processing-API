@@ -87,7 +87,7 @@ var resizeImage = function (imageName, width, height) { return __awaiter(void 0,
     return __generator(this, function (_c) {
         switch (_c.label) {
             case 0:
-                imagesPath = path_1.default.join(__dirname, './images/', "".concat(imageName).concat(width, "x").concat(height, ".jpg"));
+                imagesPath = path_1.default.join(__dirname, './images/full/', "".concat(imageName).concat(width, "x").concat(height, ".jpg"));
                 outputImages = path_1.default.join(__dirname, './build/images/', "".concat(imageName).concat(width, "x").concat(height, ".jpg"));
                 _c.label = 1;
             case 1:
