@@ -7,7 +7,10 @@ describe("Test endpoint responses", () => {
 		const response = await request.get("/");
 		expect(response.status).toBe(200);
 	});
-	it('returns a valid response', async () => {
+});
+
+describe("Test if iamges are resized", () => {
+	it("returns a valid response", async () => {
 		const response = await request.get("/route?imageName=santamonica&width=500%height=500");
 		expect(response.status).toBe(200);
 	});
@@ -19,4 +22,4 @@ describe("Test endpoint responses", () => {
 		const response = await request.get("/route?imageName=santamonica&height=500");
 		expect(response.status).toBe(404);
 	});
-});
+})
