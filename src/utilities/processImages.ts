@@ -25,7 +25,7 @@ const getImage = async (imageName: string, width: number, height: number): Promi
 };
 
 const resizeImage = async (imageName: string, width: number, height: number): Promise<string> => {
-    const imagesPath = path.join(__dirname, '/images', `${imageName.toLowerCase()}(${width}x${height}).jpg`);
+    const imagesPath = path.join(__dirname, '/images/', `${imageName.toLowerCase()}(${width}x${height}).jpg`);
     const outputImages = path.join(__dirname, '/images', `${imageName.toLowerCase()}(${width}x${height}).jpg`);
     let resizedImage: fspromises.FileHandle;
     
