@@ -19,6 +19,7 @@ describe("Test if iamges are resized", () => {
 	it("returns a 404 error for invalid name image", async () => {
 		const response = await request.get("/route?imageName=wrongName&width=500%height=500");
 		expect(response.status).toBe(404);
+		expect(response.body.message).toBe("invalid name image");
 	});
 	it("returns a 400 error for incomplete request", async () => {
 		const response = await request.get("/route?imageName=santamonica&height=500");
