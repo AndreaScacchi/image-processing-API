@@ -6,6 +6,7 @@ describe("Test endpoint responses", () => {
 	it("gets the API endpoint", async () => {
 		const response = await request.get("/");
 		expect(response.status).toBe(200);
+		expect(response.body.message).toBe("pass!");
 	});
 });
 
