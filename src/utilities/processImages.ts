@@ -7,7 +7,7 @@ const getImage = async (
 	width: number,
 	height: number
 ): Promise<string> => {
-	const imagesDirectory = path.join(__dirname, "../..", "/images/full/");
+	const imagesDirectory = path.join(__dirname, "../..", "/images/thumb/");
 	const filePath = path.join(
 		imagesDirectory,
 		`${imageName}${width}x${height}.jpg`
