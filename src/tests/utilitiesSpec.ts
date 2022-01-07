@@ -3,7 +3,7 @@ import { getImage, resizeImage } from "../utilities/processImages";
 import checkFile from "../utilities/checkFile";
 
 describe("Test to find out if the file/image exist", async () => {
-	const rightPath = "./images/thumb/santamonica200x200.jpg";
+	const rightPath = "./images/full/santamonica200x200.jpg";
 	const incorrectPath = "./images/thumb/santamonic200x200.jpg";
 
 	it("expects that file exist", async () => {
