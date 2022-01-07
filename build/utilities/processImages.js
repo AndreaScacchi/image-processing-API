@@ -48,7 +48,7 @@ var getImage = function (imageName, width, height) { return __awaiter(void 0, vo
     return __generator(this, function (_b) {
         switch (_b.label) {
             case 0:
-                imagesDirectory = path_1.default.join(__dirname, './images/full/');
+                imagesDirectory = path_1.default.join(__dirname, "../..", "/images/full/");
                 filePath = path_1.default.join(imagesDirectory, "".concat(imageName).concat(width, "x").concat(height, ".jpg"));
                 _b.label = 1;
             case 1:
@@ -87,8 +87,8 @@ var resizeImage = function (imageName, width, height) { return __awaiter(void 0,
     return __generator(this, function (_c) {
         switch (_c.label) {
             case 0:
-                imagesPath = path_1.default.join(__dirname, './images/full/', "".concat(imageName).concat(width, "x").concat(height, ".jpg"));
-                outputImages = path_1.default.join(__dirname, './images/thumb/', "".concat(imageName).concat(width, "x").concat(height, ".jpg"));
+                imagesPath = path_1.default.join(__dirname, "../..", "/images/full/", "".concat(imageName).concat(width, "x").concat(height, ".jpg"));
+                outputImages = path_1.default.join(__dirname, "../..", "/images/thumb/", "".concat(imageName).concat(width, "x").concat(height, ".jpg"));
                 _c.label = 1;
             case 1:
                 _c.trys.push([1, 3, , 4]);
