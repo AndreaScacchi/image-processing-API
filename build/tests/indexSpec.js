@@ -51,6 +51,7 @@ describe("Test endpoint responses", function () {
                 case 1:
                     response = _a.sent();
                     expect(response.status).toBe(200);
+                    expect(response.body.message).toBe("pass!");
                     return [2 /*return*/];
             }
         });
