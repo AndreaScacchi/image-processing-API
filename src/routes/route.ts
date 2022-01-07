@@ -6,7 +6,7 @@ route.get(
 	"/",
 	async (req: express.Request, res: express.Response): Promise<void> => {
 		const image = await getImage(
-			req.query.resizedImage as string,
+			req.query.imageName as string,
 			parseInt(req.query.width as string),
 			parseInt(req.query.height as string)
 		);
@@ -24,7 +24,7 @@ route.get(
 					return;
 				}
 				const filePath = await resizeImage(
-					req.query.resizedImage as string,
+					req.query.imageName as string,
 					width,
 					height
 				);
