@@ -65,13 +65,13 @@ var getImage = function (imageName, width, height) { return __awaiter(void 0, vo
                 return [3 /*break*/, 5];
             case 5:
                 _b.trys.push([5, 7, , 8]);
-                return [4 /*yield*/, fs_1.promises.readFile(filePath, { flag: 'r' })];
+                return [4 /*yield*/, fs_1.promises.readFile(filePath, { flag: "r" })];
             case 6:
                 _b.sent();
                 return [3 /*break*/, 8];
             case 7:
                 err_1 = _b.sent();
-                errorMessage = 'Got an error trying to read the file';
+                errorMessage = "Got an error trying to read the file";
                 if (err_1 instanceof Error) {
                     errorMessage = "".concat(errorMessage, ": ").concat(err_1.message);
                 }
@@ -92,7 +92,7 @@ var resizeImage = function (imageName, width, height) { return __awaiter(void 0,
                 _c.label = 1;
             case 1:
                 _c.trys.push([1, 3, , 4]);
-                return [4 /*yield*/, fs_1.promises.open(imagesPath, 'r')];
+                return [4 /*yield*/, fs_1.promises.open(imagesPath, "r")];
             case 2:
                 resizedImage = _c.sent();
                 return [3 /*break*/, 4];
@@ -103,7 +103,9 @@ var resizeImage = function (imageName, width, height) { return __awaiter(void 0,
                 _c.trys.push([4, 7, , 8]);
                 _b = sharp_1.default;
                 return [4 /*yield*/, resizedImage.readFile()];
-            case 5: return [4 /*yield*/, _b.apply(void 0, [_c.sent()]).resize({ width: width, height: height }).toFile(outputImages)];
+            case 5: return [4 /*yield*/, _b.apply(void 0, [_c.sent()])
+                    .resize({ width: width, height: height })
+                    .toFile(outputImages)];
             case 6:
                 _c.sent();
                 resizedImage.close();

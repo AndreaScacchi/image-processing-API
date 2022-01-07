@@ -42,12 +42,12 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var path_1 = __importDefault(require("path"));
 var processImages_1 = require("../utilities/processImages");
 var checkFile_1 = __importDefault(require("../utilities/checkFile"));
-describe('Test to find out if the file/image exist', function () { return __awaiter(void 0, void 0, void 0, function () {
+describe("Test to find out if the file/image exist", function () { return __awaiter(void 0, void 0, void 0, function () {
     var rightPath, incorrectPath;
     return __generator(this, function (_a) {
-        rightPath = './images/thumb/santamonica200x200.jpg';
-        incorrectPath = './images/thumb/santamonic200x200.jpg';
-        it('expects that file exist', function () { return __awaiter(void 0, void 0, void 0, function () {
+        rightPath = "./images/thumb/santamonica200x200.jpg";
+        incorrectPath = "./images/thumb/santamonic200x200.jpg";
+        it("expects that file exist", function () { return __awaiter(void 0, void 0, void 0, function () {
             var fileResult;
             return __generator(this, function (_a) {
                 switch (_a.label) {
@@ -59,7 +59,7 @@ describe('Test to find out if the file/image exist', function () { return __awai
                 }
             });
         }); });
-        it('expects that file does not exist', function () { return __awaiter(void 0, void 0, void 0, function () {
+        it("expects that file does not exist", function () { return __awaiter(void 0, void 0, void 0, function () {
             var fileResult;
             return __generator(this, function (_a) {
                 switch (_a.label) {
@@ -74,25 +74,25 @@ describe('Test to find out if the file/image exist', function () { return __awai
         return [2 /*return*/];
     });
 }); });
-describe('Test the image process', function () {
+describe("Test the image process", function () {
     beforeAll(function () { return __awaiter(void 0, void 0, void 0, function () {
         return __generator(this, function (_a) {
             switch (_a.label) {
-                case 0: return [4 /*yield*/, (0, processImages_1.resizeImage)('santamonica', 200, 200)];
+                case 0: return [4 /*yield*/, (0, processImages_1.resizeImage)("santamonica", 200, 200)];
                 case 1:
                     _a.sent();
                     return [2 /*return*/];
             }
         });
     }); });
-    it('returns the image path', function () { return __awaiter(void 0, void 0, void 0, function () {
+    it("returns the image path", function () { return __awaiter(void 0, void 0, void 0, function () {
         var filePath, _a;
         return __generator(this, function (_b) {
             switch (_b.label) {
                 case 0:
-                    filePath = path_1.default.join(__dirname, "./images/thumb/", 'santamonica(200x200).jpg');
+                    filePath = path_1.default.join(__dirname, "./images/thumb/", "santamonica(200x200).jpg");
                     _a = expect;
-                    return [4 /*yield*/, (0, processImages_1.getImage)('santamonica', 200, 200)];
+                    return [4 /*yield*/, (0, processImages_1.getImage)("santamonica", 200, 200)];
                 case 1:
                     _a.apply(void 0, [_b.sent()]).toBe(filePath);
                     return [2 /*return*/];
