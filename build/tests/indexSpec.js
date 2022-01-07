@@ -62,7 +62,7 @@ describe("Test if iamges are resized", function () {
         var response;
         return __generator(this, function (_a) {
             switch (_a.label) {
-                case 0: return [4 /*yield*/, request.get("/route?imageName=santamonica&width=500height=500")];
+                case 0: return [4 /*yield*/, request.get("/route?imageName=santamonica&width=500&height=500")];
                 case 1:
                     response = _a.sent();
                     expect(response.status).toBe(200);
@@ -75,7 +75,7 @@ describe("Test if iamges are resized", function () {
         var response;
         return __generator(this, function (_a) {
             switch (_a.label) {
-                case 0: return [4 /*yield*/, request.get("/route?imageName=wrongName&width=500height=500")];
+                case 0: return [4 /*yield*/, request.get("/route?imageName=wrongName&width=500&height=500")];
                 case 1:
                     response = _a.sent();
                     expect(response.status).toBe(404);
