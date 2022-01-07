@@ -24,5 +24,6 @@ describe("Test if iamges are resized", () => {
 	it("returns a 400 error for incomplete request", async () => {
 		const response = await request.get("/route?imageName=santamonica&height=500");
 		expect(response.status).toBe(404);
+		expect(response.body.message).toBe("incomplete request");
 	});
 })
