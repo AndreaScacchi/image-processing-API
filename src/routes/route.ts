@@ -4,10 +4,10 @@ const route = express.Router();
 
 route.get('/', async (req: express.Request, res: express.Response): Promise<void> => {
     const image = await getImage(
-        req.query.imageName as string,
-        parseInt(req.query.width as string),
-        parseInt(req.query.height as string)
-    );
+		req.query.imageName as string,
+		parseInt(req.query.width as string),
+		parseInt(req.query.height as string)
+	);
     
     if(image) {
         res.status(200).sendFile(image);

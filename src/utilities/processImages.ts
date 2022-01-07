@@ -3,7 +3,7 @@ import path from 'path';
 import sharp from 'sharp';
 
 const getImage = async (imageName: string, width: number, height: number): Promise<string> => {
-    const imagesDirectory = path.join(__dirname, './images/full/');
+    const imagesDirectory = path.join(__dirname, "../..", "/images/full/");
     const filePath = path.join(imagesDirectory, `${imageName}${width}x${height}.jpg`);
 
     try {
@@ -25,8 +25,8 @@ const getImage = async (imageName: string, width: number, height: number): Promi
 };
 
 const resizeImage = async (imageName: string, width: number, height: number): Promise<string> => {
-    const imagesPath = path.join(__dirname, './images/full/', `${imageName}${width}x${height}.jpg`);
-    const outputImages = path.join(__dirname, './images/thumb/', `${imageName}${width}x${height}.jpg`);
+    const imagesPath = path.join(__dirname, "../..", "/images/full/", `${imageName}${width}x${height}.jpg`);
+    const outputImages = path.join(__dirname,"../..","/images/thumb/",`${imageName}${width}x${height}.jpg`);
     let resizedImage: fspromises.FileHandle;
     
     try {
