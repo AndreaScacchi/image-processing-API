@@ -12,12 +12,12 @@ describe("Test endpoint responses", () => {
 
 describe("Test if iamges are resized", () => {
 	it("returns a valid response", async () => {
-		const response = await request.get("/route?imageName=santamonica&width=500height=500");
+		const response = await request.get("/route?imageName=santamonica&width=500&height=500");
 		expect(response.status).toBe(200);
 		expect(response.body.message).toBe("valid response");
 	});
 	it("returns a 404 error for invalid name image", async () => {
-		const response = await request.get("/route?imageName=wrongName&width=500height=500");
+		const response = await request.get("/route?imageName=wrongName&width=500&height=500");
 		expect(response.status).toBe(404);
 		expect(response.body.message).toBe("invalid name image");
 	});
