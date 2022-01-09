@@ -113,11 +113,7 @@ var resizeImage = function (filePath, outputImages, width, height) { return __aw
     return __generator(this, function (_a) {
         switch (_a.label) {
             case 0:
-                console.log(filePath);
-                console.log(outputImages);
-                _a.label = 1;
-            case 1:
-                _a.trys.push([1, 3, , 4]);
+                _a.trys.push([0, 2, , 3]);
                 return [4 /*yield*/, (0, sharp_1.default)(path_1.default.resolve(filePath))
                         .resize(width, height)
                         .toFile(path_1.default.resolve(outputImages))
@@ -125,16 +121,16 @@ var resizeImage = function (filePath, outputImages, width, height) { return __aw
                         console.log(info);
                     })
                         .catch(function (err) { return console.log(err.message); })];
-            case 2:
+            case 1:
                 _a.sent();
-                return [3 /*break*/, 4];
-            case 3:
+                return [3 /*break*/, 3];
+            case 2:
                 err_1 = _a.sent();
                 if (err_1 instanceof Error) {
                     console.log(err_1.message);
                 }
-                return [3 /*break*/, 4];
-            case 4: return [2 /*return*/, outputImages];
+                return [3 /*break*/, 3];
+            case 3: return [2 /*return*/, outputImages];
         }
     });
 }); };
