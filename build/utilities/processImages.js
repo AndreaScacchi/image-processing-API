@@ -39,8 +39,8 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-/*import { promises as fspromises } from "fs";
-import path from "path";*/
+/*import { promises as fspromises } from "fs";*/
+var path_1 = __importDefault(require("path"));
 var sharp_1 = __importDefault(require("sharp"));
 /*const getImage = async (
     imageName: string,
@@ -118,7 +118,7 @@ var resizeImage = function (filePath, outputImages, width, height) { return __aw
                 _a.label = 1;
             case 1:
                 _a.trys.push([1, 3, , 4]);
-                return [4 /*yield*/, (0, sharp_1.default)(filePath).resize(width, height).toFile(outputImages).then(function (info) {
+                return [4 /*yield*/, (0, sharp_1.default)(path_1.default.resolve(filePath)).resize(width, height).toFile(path_1.default.resolve(outputImages)).then(function (info) {
                         console.log(info);
                     })
                         .catch(function (err) { return console.log(err.message); })];
