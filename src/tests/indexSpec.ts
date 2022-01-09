@@ -1,16 +1,19 @@
 import supertest from "supertest";
 import app from "../index";
+import resizeImage from "../utilities/processImages";
 
 const request = supertest(app);
 describe("Test endpoint responses", () => {
 	it("gets the API endpoint", async () => {
-		const response = await request.get("/");
+		const response = await request.get(
+			"/api/image?imageName=santamonica&width=200&height=200"
+		);
 		expect(response.status).toBe(200);
 		expect(response.body.message).toBe("pass!");
 	});
 });
 
-describe("Test if iamges are resized", () => {
+/*describe("Test if iamges are resized", () => {
 	it("returns a valid response", async () => {
 		const response = await request.get(
 			"/route?imageName=santamonica&width=500&height=500"
@@ -32,4 +35,16 @@ describe("Test if iamges are resized", () => {
 		expect(response.status).toBe(404);
 		expect(response.body.message).toBe("incomplete request");
 	});
-});
+});*/
+
+describe("resize image function tests", () => {
+	const filePath =
+		"/Users/Andrea/Dropbox/Desktop/image-processing-API/images/full/santamonica.jpg";
+	const outputImages =
+		"/Users/Andrea/Dropbox/Desktop/image-processing-API/images/thumb/300-300-santamonica.jpg";
+
+	it("returns the rigth image file", async () => {
+		const response = await resizeImage(filePath, outputImages, 300, 300);
+		expect(response).toBe(outputImages);
+	})
+})
