@@ -2,7 +2,7 @@ import express from "express";
 import { /*getImage,*/ resizeImage } from "../../utilities/processImages";
 const route = express.Router();
 
-route.get(
+/*route.get(
 	"/",
 	async (req: express.Request, res: express.Response): Promise<void> => {
 		const image = await getImage(
@@ -40,6 +40,6 @@ route.get(
 			}
 		}
 	}
-);
+);*/
 
 export default route;
