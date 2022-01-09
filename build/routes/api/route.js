@@ -94,7 +94,7 @@ route.get('/', function (req, res) { return __awaiter(void 0, void 0, void 0, fu
                 if (!filename || !width || !height) {
                     return [2 /*return*/, res.status(404).send("An error occurred, please insert an image name, width and height")];
                 }
-                filePath = path_1.default.resolve('iamges/full', "".concat(filename, ".jpg"));
+                filePath = path_1.default.resolve('images/full', "".concat(filename, ".jpg"));
                 if (!fs_1.default.existsSync(filePath)) {
                     return [2 /*return*/, res.status(404).send("File don't exist! Try another name")];
                 }
