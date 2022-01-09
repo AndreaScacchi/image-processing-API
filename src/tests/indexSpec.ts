@@ -9,7 +9,7 @@ describe("Test endpoint responses", () => {
 			"/api/image?imageName=santamonica&width=200&height=200"
 		);
 		expect(response.status).toBe(200);
-		expect(response.body.message).toBe("pass!");
+		//expect(response.body.message).toBe("pass!");
 	});
 });
 
