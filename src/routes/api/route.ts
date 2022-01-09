@@ -66,7 +66,7 @@ route.get("/", async (req: express.Request, res: express.Response) => {
 		// output file path
 		let outputImages = path.resolve(
 			"images/thumb",
-			`${width}-${height}-${filename}.jpg`
+			`${filename}-${width}x${height}.jpg`
 		);
 
 		// check if there is already a file
