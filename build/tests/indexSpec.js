@@ -58,10 +58,10 @@ describe("Test endpoint responses", function () {
         });
     }); });
 });
-describe("resize image function tests", function () {
+describe("test if the resizeImage function works", function () {
     var filePath = "/Users/Andrea/Dropbox//PC/Desktop/image-processing-API/images/full/santamonica.jpg";
     var outputImages = "/Users/Andrea/Dropbox/PC/Desktop/image-processing-API/images/thumb/500-500-santamonica.jpg";
-    it("returns the rigth image file", function () { return __awaiter(void 0, void 0, void 0, function () {
+    it("returns a valid response with the rigth image file", function () { return __awaiter(void 0, void 0, void 0, function () {
         var response;
         return __generator(this, function (_a) {
             switch (_a.label) {
