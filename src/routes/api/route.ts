@@ -1,5 +1,5 @@
 import express from "express";
-import { getImage, resizeImage } from "../../utilities/processImages";
+import { /*getImage,*/ resizeImage } from "../../utilities/processImages";
 const route = express.Router();
 
 route.get(
