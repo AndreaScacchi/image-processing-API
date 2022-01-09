@@ -124,7 +124,7 @@ var resizeImage = function (filePath, outputImages, width, height) { return __aw
             case 2:
                 err_1 = _a.sent();
                 if (err_1 instanceof Error) {
-                    console.log(err_1.message);
+                    console.log("Cannot resize the image: ".concat(err_1.message));
                 }
                 return [3 /*break*/, 3];
             case 3: return [2 /*return*/, outputImages];
