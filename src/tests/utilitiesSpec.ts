@@ -1,5 +1,4 @@
-/*import path from "path";
-import { getImage, resizeImage } from "../utilities/processImages";
+import path from "path";
 import checkFile from "../utilities/checkFile";
 
 describe("Test to find out if the file/image exist", async () => {
@@ -17,17 +16,3 @@ describe("Test to find out if the file/image exist", async () => {
 	});
 });
 
-describe("Test the image process", () => {
-	beforeAll(async () => {
-		await resizeImage("santamonica", 200, 200);
-	});
-	it("returns the image path", async () => {
-		const filePath = path.join(
-			__dirname,
-			"./images/thumb/",
-			"santamonica(200x200).jpg"
-		);
-		expect(await getImage("santamonica", 200, 200)).toBe(filePath);
-	});
-});
-*/
