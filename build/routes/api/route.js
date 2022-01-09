@@ -95,18 +95,19 @@ route.get("/", function (req, res) { return __awaiter(void 0, void 0, void 0, fu
             case 1:
                 _a.trys.push([1, 5, , 6]);
                 if (!imagename || !width || !height) {
-                    return [2 /*return*/, res
-                            .status(404)
-                            .send("An error occurred, please insert an image name, width and height")];
+                    res.status(404)
+                        .send("An error occurred, please insert an image name, width and height");
+                    return [2 /*return*/];
                 }
                 filePath = path_1.default.resolve("images/full", "".concat(imagename, ".jpg"));
                 if (!fs_1.default.existsSync(filePath)) {
-                    return [2 /*return*/, res.status(404).send("Image don't exist! Try another name")];
+                    res.status(404).send("Image don't exist! Try another name");
+                    return [2 /*return*/];
                 }
                 outputImages = path_1.default.resolve("images/thumb", "".concat(imagename, "-").concat(width, "x").concat(height, ".jpg"));
                 if (!fs_1.default.existsSync(outputImages)) return [3 /*break*/, 2];
                 res.sendFile(outputImages);
-                return [3 /*break*/, 4];
+                return [2 /*return*/];
             case 2: return [4 /*yield*/, (0, processImages_1.default)(filePath, outputImages, width, height)];
             case 3:
                 outputImages = _a.sent();
