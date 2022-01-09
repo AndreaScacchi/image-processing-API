@@ -8,8 +8,9 @@ describe("Test endpoint responses", () => {
 		const response = await request.get(
 			"/api/route?filename=fjord&width=300&height=300"
 		);
+		const responseBody = response.body;
 		expect(response.status).toBe(200);
-		expect(response.body.message).toBe(undefined);
+		expect(response.body.message).toBe(responseBody);
 	});
 });
 
