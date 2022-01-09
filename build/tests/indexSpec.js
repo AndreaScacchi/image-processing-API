@@ -58,6 +58,22 @@ describe("Test endpoint responses", function () {
         });
     }); });
 });
+describe("resize image function tests", function () {
+    var filePath = "/Users/Andrea/Dropbox//PC/Desktop/image-processing-API/images/full/fjord.jpg";
+    var outputImages = "/Users/Andrea/Dropbox/PC/Desktop/image-processing-API/images/thumb/300-300-fjord.jpg";
+    it("returns the rigth image file", function () { return __awaiter(void 0, void 0, void 0, function () {
+        var response;
+        return __generator(this, function (_a) {
+            switch (_a.label) {
+                case 0: return [4 /*yield*/, (0, processImages_1.default)(filePath, outputImages, 300, 300)];
+                case 1:
+                    response = _a.sent();
+                    expect(response).toBe(outputImages);
+                    return [2 /*return*/];
+            }
+        });
+    }); });
+});
 /*describe("Test if iamges are resized", () => {
     it("returns a valid response", async () => {
         const response = await request.get(
@@ -81,19 +97,3 @@ describe("Test endpoint responses", function () {
         expect(response.body.message).toBe("incomplete request");
     });
 });*/
-describe("resize image function tests", function () {
-    var filePath = "/Users/Andrea/Dropbox//PC/Desktop/image-processing-API/images/full/fjord.jpg";
-    var outputImages = "/Users/Andrea/Dropbox/PC/Desktop/image-processing-API/images/thumb/300-300-fjord.jpg";
-    it("returns the rigth image file", function () { return __awaiter(void 0, void 0, void 0, function () {
-        var response;
-        return __generator(this, function (_a) {
-            switch (_a.label) {
-                case 0: return [4 /*yield*/, (0, processImages_1.default)(filePath, outputImages, 300, 300)];
-                case 1:
-                    response = _a.sent();
-                    expect(response).toBe(outputImages);
-                    return [2 /*return*/];
-            }
-        });
-    }); });
-});
