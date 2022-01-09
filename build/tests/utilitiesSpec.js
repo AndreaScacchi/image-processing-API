@@ -39,11 +39,12 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
+var path_1 = __importDefault(require("path"));
 var checkFile_1 = __importDefault(require("../utilities/checkFile"));
 describe("Test to find out if the file/image exist", function () { return __awaiter(void 0, void 0, void 0, function () {
     var rightPath, incorrectPath;
     return __generator(this, function (_a) {
-        rightPath = "./images/thumb/santamonica500x500.jpg";
+        rightPath = path_1.default.resolve("/images/thumb/santamonica500x500.jpg");
         incorrectPath = "./images/thumb/santamonic200x200.jpg";
         it("expects that file exist", function () { return __awaiter(void 0, void 0, void 0, function () {
             var fileResult;
