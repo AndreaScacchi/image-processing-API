@@ -81,7 +81,18 @@ describe("resize image function tests", function () {
                 case 1:
                     response = _a.sent();
                     expect(response.status).toBe(404);
-                    expect(response.body.message).toBe(false);
+                    return [2 /*return*/];
+            }
+        });
+    }); });
+    it('returns a 400 error for incomplete request', function () { return __awaiter(void 0, void 0, void 0, function () {
+        var response;
+        return __generator(this, function (_a) {
+            switch (_a.label) {
+                case 0: return [4 /*yield*/, request.get("/api/route?filename=fjor&width=300")];
+                case 1:
+                    response = _a.sent();
+                    expect(response.status).toBe(400);
                     return [2 /*return*/];
             }
         });
