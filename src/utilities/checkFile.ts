@@ -1,4 +1,4 @@
-import { access } from "fs/promises";
+/*import { access } from "fs/promises";
 import { constants } from "fs";
 
 const checkFile = async (path: string): Promise<boolean> => {
@@ -11,4 +11,4 @@ const checkFile = async (path: string): Promise<boolean> => {
 	}
 };
 
-export default checkFile;
+export default checkFile;*/
