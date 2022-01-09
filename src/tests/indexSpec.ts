@@ -6,7 +6,7 @@ const request = supertest(app);
 describe("Test endpoint responses", () => {
 	it("gets the image endpoint", async () => {
 		const response = await request.get(
-			"/api/route?filename=santamonica&width=300&height=300"
+			"/api/route?filename=fjord&width=300&height=300"
 		);
 		expect(response.status).toBe(200);
 		//expect(response.body.message).toBe("pass!");
@@ -39,9 +39,9 @@ describe("Test endpoint responses", () => {
 
 describe("resize image function tests", () => {
 	const filePath =
-		"/Users/Andrea/Dropbox//PC/Desktop/image-processing-API/images/full/santamonica.jpg";
+		"/Users/Andrea/Dropbox//PC/Desktop/image-processing-API/images/full/fjord.jpg";
 	const outputImages =
-		"/Users/Andrea/Dropbox/PC/Desktop/image-processing-API/images/thumb/300-300-santamonica.jpg";
+		"/Users/Andrea/Dropbox/PC/Desktop/image-processing-API/images/thumb/300-300-fjord.jpg";
 
 	it("returns the rigth image file", async () => {
 		const response = await resizeImage(filePath, outputImages, 300, 300);
