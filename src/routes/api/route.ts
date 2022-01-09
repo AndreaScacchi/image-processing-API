@@ -1,5 +1,6 @@
 import express from "express";
 import { /*getImage,*/ resizeImage } from "../../utilities/processImages";
+import path from "path";
 const route = express.Router();
 
 /*route.get(
@@ -41,5 +42,17 @@ const route = express.Router();
 		}
 	}
 );*/
+
+route.get('/', async (req: express.Request, res: express.Response): Promise<unknown> => {
+	let imageName = req.query.imageName as string;
+	let width = parseInt(req.query.width as string);
+	let height = parseInt(req.query.height as string);
+	if(!imageName || !width || !height) {
+		return res.status(404).send("An error occurred, please insert an image name, width and height");
+	}
+
+	// input file path
+
+})
 
 export default route;
