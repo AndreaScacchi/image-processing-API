@@ -81,6 +81,7 @@ describe("resize image function tests", function () {
                 case 1:
                     response = _a.sent();
                     expect(response.status).toBe(404);
+                    expect(response.body.message).toBe(false);
                     return [2 /*return*/];
             }
         });
