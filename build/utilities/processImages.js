@@ -116,11 +116,7 @@ var resizeImage = function (filePath, outputImages, width, height) { return __aw
                 _a.trys.push([0, 2, , 3]);
                 return [4 /*yield*/, (0, sharp_1.default)(path_1.default.resolve(filePath))
                         .resize(width, height)
-                        .toFile(path_1.default.resolve(outputImages))
-                        .then(function (info) {
-                        console.log(info);
-                    })
-                        .catch(function (err) { return console.log(err.message); })];
+                        .toFile(path_1.default.resolve(outputImages))];
             case 1:
                 _a.sent();
                 return [3 /*break*/, 3];
