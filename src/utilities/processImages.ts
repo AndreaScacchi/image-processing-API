@@ -84,7 +84,7 @@ const resizeImage = async (
 			.toFile(path.resolve(outputImages))
 	} catch (err) {
 		if (err instanceof Error) {
-			console.log(err.message);
+			console.log(`Cannot resize the image: ${err.message}`);
 		}
 	}
 	return outputImages;
