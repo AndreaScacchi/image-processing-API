@@ -84,13 +84,16 @@ var route = express_1.default.Router();
     }
 );*/
 route.get("/", function (req, res) { return __awaiter(void 0, void 0, void 0, function () {
-    var filename, width, height, filePath, outputImages;
+    var filename, width, height, filePath, outputImages, err_1;
     return __generator(this, function (_a) {
         switch (_a.label) {
             case 0:
                 filename = req.query.filename;
                 width = parseInt(req.query.width);
                 height = parseInt(req.query.height);
+                _a.label = 1;
+            case 1:
+                _a.trys.push([1, 5, , 6]);
                 if (!filename || !width || !height) {
                     return [2 /*return*/, res
                             .status(404)
@@ -101,15 +104,22 @@ route.get("/", function (req, res) { return __awaiter(void 0, void 0, void 0, fu
                     return [2 /*return*/, res.status(404).send("File don't exist! Try another name")];
                 }
                 outputImages = path_1.default.resolve("images/thumb", "".concat(width, "-").concat(height, "-").concat(filename, ".jpg"));
-                if (!fs_1.default.existsSync(outputImages)) return [3 /*break*/, 1];
+                if (!fs_1.default.existsSync(outputImages)) return [3 /*break*/, 2];
                 res.sendFile(outputImages);
-                return [3 /*break*/, 3];
-            case 1: return [4 /*yield*/, (0, processImages_1.default)(filePath, outputImages, width, height)];
-            case 2:
+                return [3 /*break*/, 4];
+            case 2: return [4 /*yield*/, (0, processImages_1.default)(filePath, outputImages, width, height)];
+            case 3:
                 outputImages = _a.sent();
                 res.sendFile(outputImages);
-                _a.label = 3;
-            case 3: return [2 /*return*/];
+                _a.label = 4;
+            case 4: return [3 /*break*/, 6];
+            case 5:
+                err_1 = _a.sent();
+                if (err_1 instanceof Error) {
+                    console.log(err_1.message);
+                }
+                return [3 /*break*/, 6];
+            case 6: return [2 /*return*/];
         }
     });
 }); });
