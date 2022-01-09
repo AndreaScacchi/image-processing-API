@@ -39,86 +39,100 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.resizeImage = exports.getImage = void 0;
-var fs_1 = require("fs");
-var path_1 = __importDefault(require("path"));
+/*import { promises as fspromises } from "fs";
+import path from "path";*/
 var sharp_1 = __importDefault(require("sharp"));
-var getImage = function (imageName, width, height) { return __awaiter(void 0, void 0, void 0, function () {
-    var imagesDirectory, filePath, _a, err_1, errorMessage;
-    return __generator(this, function (_b) {
-        switch (_b.label) {
-            case 0:
-                imagesDirectory = path_1.default.join(__dirname, "../..", "/images/full/");
-                filePath = path_1.default.join(imagesDirectory, "".concat(imageName).concat(width, "x").concat(height, ".jpg"));
-                _b.label = 1;
-            case 1:
-                _b.trys.push([1, 3, , 5]);
-                return [4 /*yield*/, fs_1.promises.readdir(imagesDirectory)];
-            case 2:
-                _b.sent();
-                return [3 /*break*/, 5];
-            case 3:
-                _a = _b.sent();
-                return [4 /*yield*/, fs_1.promises.mkdir(imagesDirectory)];
-            case 4:
-                _b.sent();
-                return [3 /*break*/, 5];
-            case 5:
-                _b.trys.push([5, 7, , 8]);
-                return [4 /*yield*/, fs_1.promises.readFile(filePath, { flag: "r" })];
-            case 6:
-                _b.sent();
-                return [3 /*break*/, 8];
-            case 7:
-                err_1 = _b.sent();
-                errorMessage = "Got an error trying to read the file";
-                if (err_1 instanceof Error) {
-                    errorMessage = "".concat(errorMessage, ": ").concat(err_1.message);
-                }
-                console.log(errorMessage);
-                return [3 /*break*/, 8];
-            case 8: return [2 /*return*/, filePath];
+/*const getImage = async (
+    imageName: string,
+    width: number,
+    height: number
+): Promise<string> => {
+    const imagesDirectory = path.join(__dirname, "../..", "/images/full/");
+    const filePath = path.join(
+        imagesDirectory,
+        `${imageName}${width}x${height}.jpg`
+    );
+
+    try {
+        await fspromises.readdir(imagesDirectory);
+    } catch {
+        await fspromises.mkdir(imagesDirectory);
+    }
+
+    try {
+        await fspromises.readFile(filePath, { flag: "r" });
+    } catch (err) {
+        let errorMessage = "Got an error trying to read the file";
+        if (err instanceof Error) {
+            errorMessage = `${errorMessage}: ${err.message}`;
         }
-    });
-}); };
-exports.getImage = getImage;
-var resizeImage = function (imageName, width, height) { return __awaiter(void 0, void 0, void 0, function () {
-    var imagesPath, outputImages, resizedImage, _a, _b, err_2;
-    return __generator(this, function (_c) {
-        switch (_c.label) {
+        console.log(errorMessage);
+    }
+    return filePath;
+};*/
+/*const resizeImage = async (
+    imageName: string,
+    width: number,
+    height: number
+): Promise<string> => {
+    const imagesPath = path.join(
+        __dirname,
+        "../..",
+        "/images/full/",
+        `${imageName}${width}x${height}.jpg`
+    );
+    const outputImages = path.join(
+        __dirname,
+        "../..",
+        "/images/thumb/",
+        `${imageName}${width}x${height}.jpg`
+    );
+    let resizedImage: fspromises.FileHandle;
+
+    try {
+        resizedImage = await fspromises.open(imagesPath, "r");
+    } catch {
+        throw new Error("Cannot find the specified image!");
+    }
+
+    try {
+        await sharp(await resizedImage.readFile())
+            .resize({ width, height })
+            .toFile(outputImages);
+        resizedImage.close();
+    } catch (err) {
+        resizedImage.close();
+        if (err instanceof Error) {
+            console.log(`Cannot resize the image: ${err.message}`);
+        }
+    }
+    return outputImages;
+};*/
+var resizeImage = function (filePath, outputImages, width, height) { return __awaiter(void 0, void 0, void 0, function () {
+    var err_1;
+    return __generator(this, function (_a) {
+        switch (_a.label) {
             case 0:
-                imagesPath = path_1.default.join(__dirname, "../..", "/images/full/", "".concat(imageName).concat(width, "x").concat(height, ".jpg"));
-                outputImages = path_1.default.join(__dirname, "../..", "/images/thumb/", "".concat(imageName).concat(width, "x").concat(height, ".jpg"));
-                _c.label = 1;
+                console.log(filePath);
+                console.log(outputImages);
+                _a.label = 1;
             case 1:
-                _c.trys.push([1, 3, , 4]);
-                return [4 /*yield*/, fs_1.promises.open(imagesPath, "r")];
+                _a.trys.push([1, 3, , 4]);
+                return [4 /*yield*/, (0, sharp_1.default)(filePath).resize(width, height).toFile(outputImages).then(function (info) {
+                        console.log(info);
+                    })
+                        .catch(function (err) { return console.log(err.message); })];
             case 2:
-                resizedImage = _c.sent();
+                _a.sent();
                 return [3 /*break*/, 4];
             case 3:
-                _a = _c.sent();
-                throw new Error("Cannot find the specified image!");
-            case 4:
-                _c.trys.push([4, 7, , 8]);
-                _b = sharp_1.default;
-                return [4 /*yield*/, resizedImage.readFile()];
-            case 5: return [4 /*yield*/, _b.apply(void 0, [_c.sent()])
-                    .resize({ width: width, height: height })
-                    .toFile(outputImages)];
-            case 6:
-                _c.sent();
-                resizedImage.close();
-                return [3 /*break*/, 8];
-            case 7:
-                err_2 = _c.sent();
-                resizedImage.close();
-                if (err_2 instanceof Error) {
-                    console.log("Cannot resize the image: ".concat(err_2.message));
+                err_1 = _a.sent();
+                if (err_1 instanceof Error) {
+                    console.log(err_1.message);
                 }
-                return [3 /*break*/, 8];
-            case 8: return [2 /*return*/, outputImages];
+                return [3 /*break*/, 4];
+            case 4: return [2 /*return*/, outputImages];
         }
     });
 }); };
-exports.resizeImage = resizeImage;
+exports.default = resizeImage;

@@ -40,41 +40,74 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var express_1 = __importDefault(require("express"));
-var processImages_1 = require("../../utilities/processImages");
+var processImages_1 = __importDefault(require("../../utilities/processImages"));
+var path_1 = __importDefault(require("path"));
+var fs_1 = __importDefault(require("fs"));
 var route = express_1.default.Router();
-route.get("/", function (req, res) { return __awaiter(void 0, void 0, void 0, function () {
-    var image, width, height, filePath, err_1;
-    return __generator(this, function (_a) {
-        switch (_a.label) {
-            case 0: return [4 /*yield*/, (0, processImages_1.getImage)(req.query.imageName, parseInt(req.query.width), parseInt(req.query.height))];
-            case 1:
-                image = _a.sent();
-                if (!image) return [3 /*break*/, 2];
-                res.status(200).sendFile(image);
-                return [3 /*break*/, 5];
-            case 2:
-                _a.trys.push([2, 4, , 5]);
-                width = parseInt(req.query.width);
-                height = parseInt(req.query.height);
+/*route.get(
+    "/",
+    async (req: express.Request, res: express.Response): Promise<void> => {
+        const image = await getImage(
+            req.query.imageName as string,
+            parseInt(req.query.width as string),
+            parseInt(req.query.height as string)
+        );
+
+        if (image) {
+            res.status(200).sendFile(image);
+        } else {
+            try {
+                const width = parseInt(req.query.width as string);
+                const height = parseInt(req.query.height as string);
                 if (!width || !height) {
-                    res.status(400).send("An error occurred with width or height");
-                    return [2 /*return*/];
+                    res.status(400).send(
+                        "An error occurred with width or height"
+                    );
+                    return;
                 }
-                return [4 /*yield*/, (0, processImages_1.resizeImage)(req.query.imageName, width, height)];
-            case 3:
-                filePath = _a.sent();
+                const filePath = await resizeImage(
+                    req.query.imageName as string,
+                    width,
+                    height
+                );
                 res.status(200).sendFile(filePath);
-                return [3 /*break*/, 5];
-            case 4:
-                err_1 = _a.sent();
-                if (err_1 instanceof Error) {
-                    res.status(404).send("Provide a valid image, with a valid width and height");
-                }
-                else {
+            } catch (err) {
+                if (err instanceof Error) {
+                    res.status(404).send(
+                        "Provide a valid image, with a valid width and height"
+                    );
+                } else {
                     res.send("An error occurred when resize the image");
                 }
-                return [3 /*break*/, 5];
-            case 5: return [2 /*return*/];
+            }
+        }
+    }
+);*/
+route.get('/', function (req, res) { return __awaiter(void 0, void 0, void 0, function () {
+    var imageName, width, height, filePath, outputImages;
+    return __generator(this, function (_a) {
+        switch (_a.label) {
+            case 0:
+                imageName = req.query.imageName;
+                width = parseInt(req.query.width);
+                height = parseInt(req.query.height);
+                if (!imageName || !width || !height) {
+                    return [2 /*return*/, res.status(404).send("An error occurred, please insert an image name, width and height")];
+                }
+                filePath = path_1.default.resolve('iamges/full', "".concat(imageName, ".jpg"));
+                if (!fs_1.default.existsSync(filePath)) {
+                    return [2 /*return*/, res.status(404).send("File don't exist! Try another name")];
+                }
+                outputImages = path_1.default.resolve('images/thumb', "".concat(width, "-").concat(height, "-").concat(imageName, ".jpg"));
+                if (!fs_1.default.existsSync(outputImages)) return [3 /*break*/, 1];
+                res.sendFile(outputImages);
+                return [3 /*break*/, 3];
+            case 1: return [4 /*yield*/, (0, processImages_1.default)(filePath, outputImages, width, height)];
+            case 2:
+                outputImages = _a.sent();
+                res.sendFile(outputImages);
+                _a.label = 3;
+            case 3: return [2 /*return*/];
         }
     });
 }); });

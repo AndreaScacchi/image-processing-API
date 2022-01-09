@@ -41,13 +41,14 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var supertest_1 = __importDefault(require("supertest"));
 var index_1 = __importDefault(require("../index"));
+var processImages_1 = __importDefault(require("../utilities/processImages"));
 var request = (0, supertest_1.default)(index_1.default);
 describe("Test endpoint responses", function () {
     it("gets the API endpoint", function () { return __awaiter(void 0, void 0, void 0, function () {
         var response;
         return __generator(this, function (_a) {
             switch (_a.label) {
-                case 0: return [4 /*yield*/, request.get("/")];
+                case 0: return [4 /*yield*/, request.get("/api/image?imageName=santamonica&width=200&height=200")];
                 case 1:
                     response = _a.sent();
                     expect(response.status).toBe(200);
@@ -57,42 +58,40 @@ describe("Test endpoint responses", function () {
         });
     }); });
 });
-describe("Test if iamges are resized", function () {
-    it("returns a valid response", function () { return __awaiter(void 0, void 0, void 0, function () {
+/*describe("Test if iamges are resized", () => {
+    it("returns a valid response", async () => {
+        const response = await request.get(
+            "/route?imageName=santamonica&width=500&height=500"
+        );
+        expect(response.status).toBe(200);
+        expect(response.body.message).toBe("valid response");
+    });
+    it("returns a 404 error for invalid name image", async () => {
+        const response = await request.get(
+            "/route?imageName=wrongName&width=500&height=500"
+        );
+        expect(response.status).toBe(404);
+        expect(response.body.message).toBe("invalid name image");
+    });
+    it("returns a 400 error for incomplete request", async () => {
+        const response = await request.get(
+            "/route?imageName=santamonica&height=500"
+        );
+        expect(response.status).toBe(404);
+        expect(response.body.message).toBe("incomplete request");
+    });
+});*/
+describe("resize image function tests", function () {
+    var filePath = "/Users/Andrea/Dropbox/Desktop/image-processing-API/images/full/santamonica.jpg";
+    var outputImages = "/Users/Andrea/Dropbox/Desktop/image-processing-API/images/thumb/300-300-santamonica.jpg";
+    it("returns the rigth image file", function () { return __awaiter(void 0, void 0, void 0, function () {
         var response;
         return __generator(this, function (_a) {
             switch (_a.label) {
-                case 0: return [4 /*yield*/, request.get("/route?imageName=santamonica&width=500&height=500")];
+                case 0: return [4 /*yield*/, (0, processImages_1.default)(filePath, outputImages, 300, 300)];
                 case 1:
                     response = _a.sent();
-                    expect(response.status).toBe(200);
-                    expect(response.body.message).toBe("valid response");
-                    return [2 /*return*/];
-            }
-        });
-    }); });
-    it("returns a 404 error for invalid name image", function () { return __awaiter(void 0, void 0, void 0, function () {
-        var response;
-        return __generator(this, function (_a) {
-            switch (_a.label) {
-                case 0: return [4 /*yield*/, request.get("/route?imageName=wrongName&width=500&height=500")];
-                case 1:
-                    response = _a.sent();
-                    expect(response.status).toBe(404);
-                    expect(response.body.message).toBe("invalid name image");
-                    return [2 /*return*/];
-            }
-        });
-    }); });
-    it("returns a 400 error for incomplete request", function () { return __awaiter(void 0, void 0, void 0, function () {
-        var response;
-        return __generator(this, function (_a) {
-            switch (_a.label) {
-                case 0: return [4 /*yield*/, request.get("/route?imageName=santamonica&height=500")];
-                case 1:
-                    response = _a.sent();
-                    expect(response.status).toBe(404);
-                    expect(response.body.message).toBe("incomplete request");
+                    expect(response).toBe(outputImages);
                     return [2 /*return*/];
             }
         });
