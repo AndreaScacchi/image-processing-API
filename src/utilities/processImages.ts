@@ -76,8 +76,6 @@ const resizeImage = async (
 	width: number,
 	height: number
 ): Promise<string> => {
-	console.log(filePath);
-	console.log(outputImages);
 
 	try {
 		await sharp(path.resolve(filePath))
