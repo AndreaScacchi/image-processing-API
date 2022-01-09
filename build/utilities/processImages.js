@@ -118,7 +118,7 @@ var resizeImage = function (filePath, outputImages, width, height) { return __aw
                 _a.label = 1;
             case 1:
                 _a.trys.push([1, 3, , 4]);
-                return [4 /*yield*/, (0, sharp_1.default)(path_1.default.join(__dirname, filePath)).resize(width, height).toFile(path_1.default.join(__dirname, outputImages)).then(function (info) {
+                return [4 /*yield*/, (0, sharp_1.default)(path_1.default.resolve(filePath)).resize(width, height).toFile(path_1.default.resolve(outputImages)).then(function (info) {
                         console.log(info);
                     })
                         .catch(function (err) { return console.log(err.message); })];
