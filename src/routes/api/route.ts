@@ -44,7 +44,7 @@ const route = express.Router();
 	}
 );*/
 
-route.get('/', async (req: express.Request, res: express.Response): Promise<unknown> => {
+route.get('/', async (req: express.Request, res: express.Response) => {
 	let imageName = req.query.imageName as string;
 	let width = parseInt(req.query.width as string);
 	let height = parseInt(req.query.height as string);
