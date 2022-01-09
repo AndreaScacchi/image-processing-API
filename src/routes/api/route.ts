@@ -45,11 +45,11 @@ const route = express.Router();
 );*/
 
 route.get("/", async (req: express.Request, res: express.Response) => {
-	let filename = req.query.filename as string;
+	let imagename = req.query.imagename as string;
 	let width = parseInt(req.query.width as string);
 	let height = parseInt(req.query.height as string);
 	try {
-		if (!filename || !width || !height) {
+		if (!imagename || !width || !height) {
 			return res
 				.status(404)
 				.send(
@@ -58,7 +58,7 @@ route.get("/", async (req: express.Request, res: express.Response) => {
 		}
 
 		// input file path
-		let filePath = path.resolve("images/full", `${filename}.jpg`);
+		let filePath = path.resolve("images/full", `${imagename}.jpg`);
 		if (!fs.existsSync(filePath)) {
 			return res.status(404).send("File don't exist! Try another name");
 		}
@@ -66,7 +66,7 @@ route.get("/", async (req: express.Request, res: express.Response) => {
 		// output file path
 		let outputImages = path.resolve(
 			"images/thumb",
-			`${filename}-${width}x${height}.jpg`
+			`${imagename}-${width}x${height}.jpg`
 		);
 
 		// check if there is already a file
