@@ -44,23 +44,24 @@ const route = express.Router();
 	}
 );*/
 
-route.get("/", async (req: express.Request, res: express.Response) => {
+route.get("/", async (req: express.Request, res: express.Response): Promise<void> => {
 	let imagename = req.query.imagename as string;
 	let width = parseInt(req.query.width as string);
 	let height = parseInt(req.query.height as string);
 	try {
 		if (!imagename || !width || !height) {
-			return res
-				.status(404)
+			res.status(404)
 				.send(
 					"An error occurred, please insert an image name, width and height"
 				);
+				return;
 		}
 
 		// input file path
 		let filePath = path.resolve("images/full", `${imagename}.jpg`);
 		if (!fs.existsSync(filePath)) {
-			return res.status(404).send("Image don't exist! Try another name");
+			res.status(404).send("Image don't exist! Try another name");
+			return;
 		}
 
 		// output file path
@@ -72,6 +73,7 @@ route.get("/", async (req: express.Request, res: express.Response) => {
 		// check if there is already a file
 		if (fs.existsSync(outputImages)) {
 			res.sendFile(outputImages);
+			return;
 		} else {
 			outputImages = await resizeImage(
 				filePath,
