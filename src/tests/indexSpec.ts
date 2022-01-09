@@ -9,7 +9,7 @@ describe("Test endpoint responses", () => {
 			"/api/route?filename=fjord&width=300&height=300"
 		);
 		expect(response.status).toBe(200);
-		expect(response.body.message).toEqual("pass!");
+		expect(response.body).toBe("pass!");
 	});
 });
 
