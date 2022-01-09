@@ -108,6 +108,7 @@ var sharp_1 = __importDefault(require("sharp"));
     }
     return outputImages;
 };*/
+// function to resize the images
 var resizeImage = function (filePath, outputImages, width, height) { return __awaiter(void 0, void 0, void 0, function () {
     var err_1;
     return __generator(this, function (_a) {
