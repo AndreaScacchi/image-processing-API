@@ -75,7 +75,7 @@ const resizeImage = async(filePath: string, outputImages: string, width: number,
 	console.log(outputImages);
 
 	try {
-		await sharp(path.join(__dirname, filePath)).resize(width, height).toFile(path.join(__dirname, outputImages)).then((info) => {
+		await sharp(path.resolve(filePath)).resize(width, height).toFile(path.resolve(outputImages)).then((info) => {
 			console.log(info);
 		})
 		.catch((err) => console.log(err.message));
