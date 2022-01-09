@@ -73,6 +73,18 @@ describe("resize image function tests", function () {
             }
         });
     }); });
+    it('returns a 404 error for invalid image name', function () { return __awaiter(void 0, void 0, void 0, function () {
+        var response;
+        return __generator(this, function (_a) {
+            switch (_a.label) {
+                case 0: return [4 /*yield*/, request.get("/api/route?filename=fjor&width=300&height=300")];
+                case 1:
+                    response = _a.sent();
+                    expect(response.status).toBe(404);
+                    return [2 /*return*/];
+            }
+        });
+    }); });
 });
 /*describe("Test if iamges are resized", () => {
     it("returns a valid response", async () => {
