@@ -61,7 +61,13 @@ route.get('/', async (req: express.Request, res: express.Response): Promise<unkn
 	// output file path
 	let outputImages = path.resolve('images/thumb', `${width}-${height}-${imageName}.jpg`);
 
-	
+	// check if there is already a file
+	if(fs.existsSync(outputImages)) {
+		res.sendFile(outputImages);
+	} else {
+		outputImages = await resizeImage(filePath, outputImages, width, height);
+		res.sendFile(outputImages);
+	}
 })
 
 export default route;
