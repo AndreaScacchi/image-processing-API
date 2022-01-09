@@ -84,21 +84,21 @@ var route = express_1.default.Router();
     }
 );*/
 route.get('/', function (req, res) { return __awaiter(void 0, void 0, void 0, function () {
-    var imageName, width, height, filePath, outputImages;
+    var filename, width, height, filePath, outputImages;
     return __generator(this, function (_a) {
         switch (_a.label) {
             case 0:
-                imageName = req.query.imageName;
+                filename = req.query.filename;
                 width = parseInt(req.query.width);
                 height = parseInt(req.query.height);
-                if (!imageName || !width || !height) {
+                if (!filename || !width || !height) {
                     return [2 /*return*/, res.status(404).send("An error occurred, please insert an image name, width and height")];
                 }
-                filePath = path_1.default.resolve('iamges/full', "".concat(imageName, ".jpg"));
+                filePath = path_1.default.resolve('iamges/full', "".concat(filename, ".jpg"));
                 if (!fs_1.default.existsSync(filePath)) {
                     return [2 /*return*/, res.status(404).send("File don't exist! Try another name")];
                 }
-                outputImages = path_1.default.resolve('images/thumb', "".concat(width, "-").concat(height, "-").concat(imageName, ".jpg"));
+                outputImages = path_1.default.resolve('images/thumb', "".concat(width, "-").concat(height, "-").concat(filename, ".jpg"));
                 if (!fs_1.default.existsSync(outputImages)) return [3 /*break*/, 1];
                 res.sendFile(outputImages);
                 return [3 /*break*/, 3];
