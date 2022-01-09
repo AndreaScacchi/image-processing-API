@@ -31,11 +31,11 @@ describe("resize image function tests", () => {
 		expect(response.status).toBe(404);
 	})
 
-	it('returns a 400 error for incomplete request', async () => {
+	it('returns a 404 error for incomplete request', async () => {
 		const response = await request.get(
 			"/api/route?filename=fjor&width=300"
 		);
-		expect(response.status).toBe(400);
+		expect(response.status).toBe(404);
 	})
 });
 
