@@ -53,7 +53,7 @@ route.get('/', async (req: express.Request, res: express.Response) => {
 	}
 
 	// input file path
-	let filePath = path.resolve('iamges/full', `${filename}.jpg`);
+	let filePath = path.resolve('images/full', `${filename}.jpg`);
 	if(!fs.existsSync(filePath)) {
 		return res.status(404).send("File don't exist! Try another name");
 	}
