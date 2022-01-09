@@ -45,15 +45,14 @@ var processImages_1 = __importDefault(require("../utilities/processImages"));
 var request = (0, supertest_1.default)(index_1.default);
 describe("Test endpoint responses", function () {
     it("gets the image endpoint", function () { return __awaiter(void 0, void 0, void 0, function () {
-        var response, responseBody;
+        var response;
         return __generator(this, function (_a) {
             switch (_a.label) {
                 case 0: return [4 /*yield*/, request.get("/api/route?filename=fjord&width=300&height=300")];
                 case 1:
                     response = _a.sent();
-                    responseBody = response.body;
                     expect(response.status).toBe(200);
-                    expect(response.body.message).toEqual(responseBody);
+                    expect(response.body.message).toEqual(undefined);
                     return [2 /*return*/];
             }
         });
