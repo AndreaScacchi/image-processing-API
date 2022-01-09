@@ -29,6 +29,7 @@ describe("resize image function tests", () => {
 			"/api/route?filename=fjor&width=300&height=300"
 		);
 		expect(response.status).toBe(404);
+		expect(response.body.message).toBe(false);
 	})
 });
 
