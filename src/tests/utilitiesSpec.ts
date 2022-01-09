@@ -2,7 +2,7 @@ import path from "path";
 import checkFile from "../utilities/checkFile";
 
 describe("Test to find out if the file/image exist", async () => {
-	const rightPath = "./images/thumb/santamonica200x200.jpg";
+	const rightPath = "./images/thumb/santamonica500x500.jpg";
 	const incorrectPath = "./images/thumb/santamonic200x200.jpg";
 
 	it("expects that file exist", async () => {
