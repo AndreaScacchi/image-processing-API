@@ -70,21 +70,29 @@ import sharp from "sharp";
 	return outputImages;
 };*/
 
-const resizeImage = async(filePath: string, outputImages: string, width: number, height: number): Promise<string> => {
+const resizeImage = async (
+	filePath: string,
+	outputImages: string,
+	width: number,
+	height: number
+): Promise<string> => {
 	console.log(filePath);
 	console.log(outputImages);
 
 	try {
-		await sharp(path.resolve(filePath)).resize(width, height).toFile(path.resolve(outputImages)).then((info) => {
-			console.log(info);
-		})
-		.catch((err) => console.log(err.message));
-	} catch(err) {
-		if(err instanceof Error) {
+		await sharp(path.resolve(filePath))
+			.resize(width, height)
+			.toFile(path.resolve(outputImages))
+			.then(info => {
+				console.log(info);
+			})
+			.catch(err => console.log(err.message));
+	} catch (err) {
+		if (err instanceof Error) {
 			console.log(err.message);
 		}
 	}
 	return outputImages;
-}
+};
 
-export default /*getImage,*/ resizeImage 
+export default /*getImage,*/ resizeImage;

@@ -1,5 +1,5 @@
 import express from "express";
-import  /*getImage,*/ resizeImage  from "../../utilities/processImages";
+import /*getImage,*/ resizeImage from "../../utilities/processImages";
 import path from "path";
 import fs from "fs";
 const route = express.Router();
@@ -44,30 +44,37 @@ const route = express.Router();
 	}
 );*/
 
-route.get('/', async (req: express.Request, res: express.Response) => {
+route.get("/", async (req: express.Request, res: express.Response) => {
 	let filename = req.query.filename as string;
 	let width = parseInt(req.query.width as string);
 	let height = parseInt(req.query.height as string);
-	if(!filename || !width || !height) {
-		return res.status(404).send("An error occurred, please insert an image name, width and height");
+	if (!filename || !width || !height) {
+		return res
+			.status(404)
+			.send(
+				"An error occurred, please insert an image name, width and height"
+			);
 	}
 
 	// input file path
-	let filePath = path.resolve('images/full', `${filename}.jpg`);
-	if(!fs.existsSync(filePath)) {
+	let filePath = path.resolve("images/full", `${filename}.jpg`);
+	if (!fs.existsSync(filePath)) {
 		return res.status(404).send("File don't exist! Try another name");
 	}
 
 	// output file path
-	let outputImages = path.resolve('images/thumb', `${width}-${height}-${filename}.jpg`);
+	let outputImages = path.resolve(
+		"images/thumb",
+		`${width}-${height}-${filename}.jpg`
+	);
 
 	// check if there is already a file
-	if(fs.existsSync(outputImages)) {
+	if (fs.existsSync(outputImages)) {
 		res.sendFile(outputImages);
 	} else {
 		outputImages = await resizeImage(filePath, outputImages, width, height);
 		res.sendFile(outputImages);
 	}
-})
+});
 
 export default route;

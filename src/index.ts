@@ -4,7 +4,7 @@ const app = express();
 const port = 5000;
 
 // use the router object as middleware
-app.use('/api', routes);
+app.use("/api", routes);
 
 /*app.use("/", routes, (req: express.Request, res: express.Response): void => {
 	res.send("helllo");

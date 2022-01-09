@@ -6,8 +6,8 @@
   "scripts": {
     "test": "jasmine",
     "build": "npx tsc",
-    "lint": "eslint 'src/index.ts'",
-    "prettier": "prettier --config .prettierrc '*/**.ts' --write",
+    "lint": "eslint --ext .ts",
+    "prettier": "prettier \"src/**/*.ts\" --write",
     "dev": "nodemon ./build/index",
     "start": "node ./build/index"
   },

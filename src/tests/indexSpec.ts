@@ -46,5 +46,5 @@ describe("resize image function tests", () => {
 	it("returns the rigth image file", async () => {
 		const response = await resizeImage(filePath, outputImages, 300, 300);
 		expect(response).toBe(outputImages);
-	})
-})
+	});
+});
