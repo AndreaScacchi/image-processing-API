@@ -1,5 +1,5 @@
-/*import { promises as fspromises } from "fs";
-import path from "path";*/
+/*import { promises as fspromises } from "fs";*/
+import path from "path";
 import sharp from "sharp";
 
 /*const getImage = async (
@@ -75,7 +75,7 @@ const resizeImage = async(filePath: string, outputImages: string, width: number,
 	console.log(outputImages);
 
 	try {
-		await sharp(filePath).resize(width, height).toFile(outputImages).then((info) => {
+		await sharp(path.resolve(filePath)).resize(width, height).toFile(path.resolve(outputImages)).then((info) => {
 			console.log(info);
 		})
 		.catch((err) => console.log(err.message));
