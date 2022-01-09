@@ -10,7 +10,7 @@ describe("Test endpoint responses", () => {
 		);
 		const responseBody = response.body;
 		expect(response.status).toBe(200);
-		expect(response.body.message).toBe(responseBody);
+		expect(response.body.message).toEqual(responseBody);
 	});
 });
 
