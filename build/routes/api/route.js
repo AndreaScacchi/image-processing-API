@@ -116,7 +116,7 @@ route.get("/", function (req, res) { return __awaiter(void 0, void 0, void 0, fu
             case 5:
                 err_1 = _a.sent();
                 if (err_1 instanceof Error) {
-                    console.log(err_1.message);
+                    res.status(404).send("There is an error: ".concat(err_1.message));
                 }
                 return [3 /*break*/, 6];
             case 6: return [2 /*return*/];
