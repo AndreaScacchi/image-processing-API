@@ -87,4 +87,4 @@ const resizeImage = async(filePath: string, outputImages: string, width: number,
 	return outputImages;
 }
 
-export { /*getImage,*/ resizeImage };
+export default /*getImage,*/ resizeImage 
