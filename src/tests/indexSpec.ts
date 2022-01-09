@@ -29,7 +29,13 @@ describe("resize image function tests", () => {
 			"/api/route?filename=fjor&width=300&height=300"
 		);
 		expect(response.status).toBe(404);
-		expect(response.body.message).toBe(false);
+	})
+
+	it('returns a 400 error for incomplete request', async () => {
+		const response = await request.get(
+			"/api/route?filename=fjor&width=300"
+		);
+		expect(response.status).toBe(400);
 	})
 });
 
