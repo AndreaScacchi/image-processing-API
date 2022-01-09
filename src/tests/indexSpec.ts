@@ -6,7 +6,7 @@ const request = supertest(app);
 describe("Test endpoint responses", () => {
 	it("gets the image endpoint", async () => {
 		const response = await request.get(
-			"/api/route?imageName=santamonica&width=300&height=300"
+			"/api/route?filename=santamonica&width=300&height=300"
 		);
 		expect(response.status).toBe(200);
 		//expect(response.body.message).toBe("pass!");
