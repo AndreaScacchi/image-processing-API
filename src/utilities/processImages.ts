@@ -2,7 +2,7 @@ import { promises as fspromises } from "fs";
 import path from "path";
 import sharp from "sharp";
 
-const getImage = async (
+/*const getImage = async (
 	imageName: string,
 	width: number,
 	height: number
@@ -29,7 +29,7 @@ const getImage = async (
 		console.log(errorMessage);
 	}
 	return filePath;
-};
+};*/
 
 const resizeImage = async (
 	imageName: string,
