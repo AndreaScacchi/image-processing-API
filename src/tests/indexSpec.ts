@@ -39,9 +39,9 @@ describe("Test endpoint responses", () => {
 
 describe("resize image function tests", () => {
 	const filePath =
-		"/Users/Andrea/Dropbox/Desktop/image-processing-API/images/full/santamonica.jpg";
+		"/Users/Andrea/Dropbox//PC/Desktop/image-processing-API/images/full/santamonica.jpg";
 	const outputImages =
-		"/Users/Andrea/Dropbox/Desktop/image-processing-API/images/thumb/300-300-santamonica.jpg";
+		"/Users/Andrea/Dropbox/PC/Desktop/image-processing-API/images/thumb/300-300-santamonica.jpg";
 
 	it("returns the rigth image file", async () => {
 		const response = await resizeImage(filePath, outputImages, 300, 300);
