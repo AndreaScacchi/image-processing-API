@@ -101,7 +101,7 @@ route.get("/", function (req, res) { return __awaiter(void 0, void 0, void 0, fu
                 }
                 filePath = path_1.default.resolve("images/full", "".concat(imagename, ".jpg"));
                 if (!fs_1.default.existsSync(filePath)) {
-                    return [2 /*return*/, res.status(404).send("File don't exist! Try another name")];
+                    return [2 /*return*/, res.status(404).send("Image don't exist! Try another name")];
                 }
                 outputImages = path_1.default.resolve("images/thumb", "".concat(imagename, "-").concat(width, "x").concat(height, ".jpg"));
                 if (!fs_1.default.existsSync(outputImages)) return [3 /*break*/, 2];
