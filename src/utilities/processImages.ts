@@ -70,6 +70,7 @@ import sharp from "sharp";
 	return outputImages;
 };*/
 
+// function to resize the images
 const resizeImage = async (
 	filePath: string,
 	outputImages: string,
