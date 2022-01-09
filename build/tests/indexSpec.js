@@ -53,7 +53,7 @@ describe("Test endpoint responses", function () {
                     response = _a.sent();
                     responseBody = response.body;
                     expect(response.status).toBe(200);
-                    expect(response.body.message).toBe(responseBody);
+                    expect(response.body.message).toEqual(responseBody);
                     return [2 /*return*/];
             }
         });
