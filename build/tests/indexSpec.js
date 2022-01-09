@@ -48,7 +48,7 @@ describe("Test endpoint responses", function () {
         var response;
         return __generator(this, function (_a) {
             switch (_a.label) {
-                case 0: return [4 /*yield*/, request.get("/api/route?filename=santamonica&width=300&height=300")];
+                case 0: return [4 /*yield*/, request.get("/api/route?filename=santamonica&width=500&height=500")];
                 case 1:
                     response = _a.sent();
                     expect(response.status).toBe(200);
@@ -60,12 +60,12 @@ describe("Test endpoint responses", function () {
 });
 describe("resize image function tests", function () {
     var filePath = "/Users/Andrea/Dropbox//PC/Desktop/image-processing-API/images/full/santamonica.jpg";
-    var outputImages = "/Users/Andrea/Dropbox/PC/Desktop/image-processing-API/images/thumb/300-300-santamonica.jpg";
+    var outputImages = "/Users/Andrea/Dropbox/PC/Desktop/image-processing-API/images/thumb/500-500-santamonica.jpg";
     it("returns the rigth image file", function () { return __awaiter(void 0, void 0, void 0, function () {
         var response;
         return __generator(this, function (_a) {
             switch (_a.label) {
-                case 0: return [4 /*yield*/, (0, processImages_1.default)(filePath, outputImages, 300, 300)];
+                case 0: return [4 /*yield*/, (0, processImages_1.default)(filePath, outputImages, 500, 500)];
                 case 1:
                     response = _a.sent();
                     expect(response).toBe(outputImages);
@@ -77,7 +77,7 @@ describe("resize image function tests", function () {
         var response;
         return __generator(this, function (_a) {
             switch (_a.label) {
-                case 0: return [4 /*yield*/, request.get("/api/route?filename=santamonic&width=300&height=300")];
+                case 0: return [4 /*yield*/, request.get("/api/route?filename=santamonic&width=500&height=500")];
                 case 1:
                     response = _a.sent();
                     expect(response.status).toBe(404);
@@ -89,7 +89,7 @@ describe("resize image function tests", function () {
         var response;
         return __generator(this, function (_a) {
             switch (_a.label) {
-                case 0: return [4 /*yield*/, request.get("/api/route?filename=santamonica&width=300")];
+                case 0: return [4 /*yield*/, request.get("/api/route?filename=santamonica&width=500")];
                 case 1:
                     response = _a.sent();
                     expect(response.status).toBe(404);
