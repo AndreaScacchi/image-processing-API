@@ -1,5 +1,5 @@
-import { promises as fspromises } from "fs";
-import path from "path";
+/*import { promises as fspromises } from "fs";
+import path from "path";*/
 import sharp from "sharp";
 
 /*const getImage = async (
@@ -31,7 +31,7 @@ import sharp from "sharp";
 	return filePath;
 };*/
 
-const resizeImage = async (
+/*const resizeImage = async (
 	imageName: string,
 	width: number,
 	height: number
@@ -68,6 +68,6 @@ const resizeImage = async (
 		}
 	}
 	return outputImages;
-};
+};*/
 
 export { /*getImage,*/ resizeImage };
