@@ -8,7 +8,7 @@ var index_1 = __importDefault(require("./routes/index"));
 var app = (0, express_1.default)();
 var port = 5000;
 // use the router object as middleware
-app.use('/api', index_1.default);
+app.use("/api", index_1.default);
 /*app.use("/", routes, (req: express.Request, res: express.Response): void => {
     res.send("helllo");
 });*/

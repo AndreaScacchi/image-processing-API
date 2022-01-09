@@ -83,7 +83,7 @@ var route = express_1.default.Router();
         }
     }
 );*/
-route.get('/', function (req, res) { return __awaiter(void 0, void 0, void 0, function () {
+route.get("/", function (req, res) { return __awaiter(void 0, void 0, void 0, function () {
     var filename, width, height, filePath, outputImages;
     return __generator(this, function (_a) {
         switch (_a.label) {
@@ -92,13 +92,15 @@ route.get('/', function (req, res) { return __awaiter(void 0, void 0, void 0, fu
                 width = parseInt(req.query.width);
                 height = parseInt(req.query.height);
                 if (!filename || !width || !height) {
-                    return [2 /*return*/, res.status(404).send("An error occurred, please insert an image name, width and height")];
+                    return [2 /*return*/, res
+                            .status(404)
+                            .send("An error occurred, please insert an image name, width and height")];
                 }
-                filePath = path_1.default.resolve('images/full', "".concat(filename, ".jpg"));
+                filePath = path_1.default.resolve("images/full", "".concat(filename, ".jpg"));
                 if (!fs_1.default.existsSync(filePath)) {
                     return [2 /*return*/, res.status(404).send("File don't exist! Try another name")];
                 }
-                outputImages = path_1.default.resolve('images/thumb', "".concat(width, "-").concat(height, "-").concat(filename, ".jpg"));
+                outputImages = path_1.default.resolve("images/thumb", "".concat(width, "-").concat(height, "-").concat(filename, ".jpg"));
                 if (!fs_1.default.existsSync(outputImages)) return [3 /*break*/, 1];
                 res.sendFile(outputImages);
                 return [3 /*break*/, 3];

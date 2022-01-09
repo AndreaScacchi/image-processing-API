@@ -31,4 +31,4 @@ describe("Test the image process", () => {
         expect(await getImage("santamonica", 200, 200)).toBe(filePath);
     });
 });
-*/ 
+*/
