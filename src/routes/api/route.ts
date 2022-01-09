@@ -57,6 +57,11 @@ route.get('/', async (req: express.Request, res: express.Response): Promise<unkn
 	if(!fs.existsSync(filePath)) {
 		return res.status(404).send("File don't exist! Try another name");
 	}
+
+	// output file path
+	let outputImages = path.resolve('images/thumb', `${width}-${height}-${imageName}.jpg`);
+
+	
 })
 
 export default route;
