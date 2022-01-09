@@ -70,4 +70,4 @@ const resizeImage = async (
 	return outputImages;
 };
 
-export { getImage, resizeImage };
+export { /*getImage,*/ resizeImage };
