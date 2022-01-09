@@ -1,4 +1,4 @@
-import path from "path";
+/*import path from "path";
 import { getImage, resizeImage } from "../utilities/processImages";
 import checkFile from "../utilities/checkFile";
 
@@ -30,3 +30,4 @@ describe("Test the image process", () => {
 		expect(await getImage("santamonica", 200, 200)).toBe(filePath);
 	});
 });
+*/
