@@ -23,6 +23,13 @@ describe("resize image function tests", () => {
 		const response = await resizeImage(filePath, outputImages, 300, 300);
 		expect(response).toBe(outputImages);
 	});
+
+	it('returns a 404 error for invalid image name', async () => {
+		const response = await request.get(
+			"/api/route?filename=fjor&width=300&height=300"
+		);
+		expect(response.status).toBe(404);
+	})
 });
 
 /*describe("Test if iamges are resized", () => {
