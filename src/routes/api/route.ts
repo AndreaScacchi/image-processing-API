@@ -1,6 +1,7 @@
 import express from "express";
 import { /*getImage,*/ resizeImage } from "../../utilities/processImages";
 import path from "path";
+import fs from "fs";
 const route = express.Router();
 
 /*route.get(
