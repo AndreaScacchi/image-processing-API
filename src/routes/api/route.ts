@@ -83,7 +83,7 @@ route.get("/", async (req: express.Request, res: express.Response) => {
 		}
 	} catch(err) {
 		if(err instanceof Error) {
-			console.log(err.message);
+			res.status(404).send(`There is an error: ${err.message}`);
 		}
 	}
 });
