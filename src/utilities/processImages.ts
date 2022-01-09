@@ -81,10 +81,6 @@ const resizeImage = async (
 		await sharp(path.resolve(filePath))
 			.resize(width, height)
 			.toFile(path.resolve(outputImages))
-			.then(info => {
-				console.log(info);
-			})
-			.catch(err => console.log(err.message));
 	} catch (err) {
 		if (err instanceof Error) {
 			console.log(err.message);
