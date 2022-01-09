@@ -31,45 +31,6 @@ import sharp from "sharp";
 	return filePath;
 };*/
 
-/*const resizeImage = async (
-	imageName: string,
-	width: number,
-	height: number
-): Promise<string> => {
-	const imagesPath = path.join(
-		__dirname,
-		"../..",
-		"/images/full/",
-		`${imageName}${width}x${height}.jpg`
-	);
-	const outputImages = path.join(
-		__dirname,
-		"../..",
-		"/images/thumb/",
-		`${imageName}${width}x${height}.jpg`
-	);
-	let resizedImage: fspromises.FileHandle;
-
-	try {
-		resizedImage = await fspromises.open(imagesPath, "r");
-	} catch {
-		throw new Error("Cannot find the specified image!");
-	}
-
-	try {
-		await sharp(await resizedImage.readFile())
-			.resize({ width, height })
-			.toFile(outputImages);
-		resizedImage.close();
-	} catch (err) {
-		resizedImage.close();
-		if (err instanceof Error) {
-			console.log(`Cannot resize the image: ${err.message}`);
-		}
-	}
-	return outputImages;
-};*/
-
 // function to resize the images
 const resizeImage = async (
 	filePath: string,
