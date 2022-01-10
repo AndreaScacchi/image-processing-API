@@ -13,4 +13,5 @@ routes.get("/", (req: express.Request, res: express.Response): void => {
 // use the router object as middleware
 routes.use("/route", route);
 
+// router object exported
 export default routes;
