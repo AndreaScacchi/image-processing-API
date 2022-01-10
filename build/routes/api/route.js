@@ -60,8 +60,7 @@ route.get("/", function (req, res) { return __awaiter(void 0, void 0, void 0, fu
                 _a.trys.push([1, 5, , 6]);
                 // check if the image name, width or height are valid
                 if (!imagename || !width || !height) {
-                    res.status(404)
-                        .send("An error occurred, please insert an image name, width and height");
+                    res.status(404).send("An error occurred, please insert an image name, width and height");
                     return [2 /*return*/];
                 }
                 filePath = path_1.default.resolve("images/full", "".concat(imagename, ".jpg"));
