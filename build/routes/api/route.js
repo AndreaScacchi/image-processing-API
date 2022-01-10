@@ -75,6 +75,7 @@ route.get("/", function (req, res) { return __awaiter(void 0, void 0, void 0, fu
                 return [2 /*return*/];
             case 2: return [4 /*yield*/, (0, processImages_1.default)(filePath, outputImages, width, height)];
             case 3:
+                // otherwise invoke the resizeImage function
                 outputImages = _a.sent();
                 res.sendFile(outputImages);
                 _a.label = 4;
