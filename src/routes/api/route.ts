@@ -53,6 +53,7 @@ route.get("/", async (req: express.Request, res: express.Response): Promise<void
 		}
 	} catch(err) {
 		if(err instanceof Error) {
+			// catch the error
 			res.status(404).send(`There is an error: ${err.message}`);
 		}
 	}
