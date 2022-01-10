@@ -10,7 +10,7 @@ const request = supertest(app);
 describe("Test endpoint responses", () => {
 	it("gets the image endpoint", async () => {
 		const response = await request.get(
-			"/api/route?imagename=icelandwaterfall&width=300&height=300"
+			"/api/route?imagename=icelandwaterfall&width=100&height=100"
 		);
 		expect(response.status).toBe(200);
 		expect(response.body.message).toEqual(undefined);
@@ -20,27 +20,27 @@ describe("Test endpoint responses", () => {
 // test it the resizeImage function works
 describe("test if the resizeImage function works", () => {
 	const filePath =
-		"/Users/Andrea/Dropbox//PC/Desktop/image-processing-API/images/full/icelandwaterfall.jpg";
+		"/Users/Andrea/Dropbox//PC/Desktop/image-processing-API/images/full/icelandwaterfall.jpeg";
 	const outputImages =
-		"/Users/Andrea/Dropbox/PC/Desktop/image-processing-API/images/thumb/icelandwaterfall-300x300.jpg";
+		"/Users/Andrea/Dropbox/PC/Desktop/image-processing-API/images/thumb/icelandwaterfall-100x100.jpeg";
 
 	// return a valid response
 	it("returns a valid response with the rigth image file", async () => {
-		const response = await resizeImage(filePath, outputImages, 300, 300);
+		const response = await resizeImage(filePath, outputImages, 100, 100);
 		expect(response).toBe(outputImages);
 	});
 
 	// return a 404 response for incorrect image name
 	it("returns a 404 error for incorrect image name", async () => {
 		const response = await request.get(
-			"/api/route?imagename=iceland_waterfall&width=300&height=300"
+			"/api/route?imagename=iceland_waterfall&width=100&height=100"
 		);
 		expect(response.status).toBe(404);
 	});
 	// return a 404 response for incomplete request
 	it("returns a 404 error for incomplete request", async () => {
 		const response = await request.get(
-			"/api/route?imagename=icelandwaterfall&width=300"
+			"/api/route?imagename=icelandwaterfall&width=100"
 		);
 		expect(response.status).toBe(404);
 	});
