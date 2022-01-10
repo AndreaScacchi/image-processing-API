@@ -22,14 +22,14 @@ route.get("/", async (req: express.Request, res: express.Response): Promise<void
 				return;
 		}
 
-		// input file path
+		// create input file path
 		let filePath = path.resolve("images/full", `${imagename}.jpg`);
 		if (!fs.existsSync(filePath)) {
 			res.status(404).send("Image don't exist! Try another name");
 			return;
 		}
 
-		// output file path
+		//  create output file path
 		let outputImages = path.resolve(
 			"images/thumb",
 			`${imagename}-${width}x${height}.jpg`
