@@ -8,6 +8,7 @@ var express_1 = __importDefault(require("express"));
 var route_1 = __importDefault(require("./api/route"));
 // router object declared
 var routes = express_1.default.Router();
+// use the router object for the main API route
 routes.get("/", function (req, res) {
     res.send("API route");
 });
