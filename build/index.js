@@ -8,6 +8,7 @@ var express_1 = __importDefault(require("express"));
 var index_1 = __importDefault(require("./routes/index"));
 // application object created
 var app = (0, express_1.default)();
+// port where the app run declared
 var port = 5000;
 // use the router object as middleware
 app.use("/api", index_1.default);
