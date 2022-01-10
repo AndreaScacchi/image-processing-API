@@ -1,3 +1,4 @@
+// import path and checkFile function
 import path from "path";
 import checkFile from "../utilities/checkFile";
 
