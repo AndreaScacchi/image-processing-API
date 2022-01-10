@@ -6,6 +6,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 // import express and routes
 var express_1 = __importDefault(require("express"));
 var index_1 = __importDefault(require("./routes/index"));
+// application object created
 var app = (0, express_1.default)();
 var port = 5000;
 // use the router object as middleware
