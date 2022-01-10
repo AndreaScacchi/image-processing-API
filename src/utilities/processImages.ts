@@ -13,6 +13,7 @@ const resizeImage = async (
 	try {
 		await sharp(path.resolve(filePath))
 			.resize(width, height)
+			.toFormat('jpeg')
 			.jpeg({
 				quality: 100,
 				// Use mozjpeg to reduce output JPEG file size (slower)
