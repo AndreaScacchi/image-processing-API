@@ -10,6 +10,7 @@ const resizeImage = async (
 	height: number
 ): Promise<string> => {
 
+	// use try catch block with sharp to resize the image, and catch the error
 	try {
 		await sharp(path.resolve(filePath))
 			.resize(width, height)
