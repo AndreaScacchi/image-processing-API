@@ -78,7 +78,8 @@ describe("test if the resizeImage function works", function () {
             }
         });
     }); });
-    it('returns a 404 error for invalid image name', function () { return __awaiter(void 0, void 0, void 0, function () {
+    // return a 404 response for incorrect image name
+    it('returns a 404 error for incorrect image name', function () { return __awaiter(void 0, void 0, void 0, function () {
         var response;
         return __generator(this, function (_a) {
             switch (_a.label) {
