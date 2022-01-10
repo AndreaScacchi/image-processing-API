@@ -12,6 +12,8 @@ route.get("/", async (req: express.Request, res: express.Response): Promise<void
 	let imagename = req.query.imagename as string;
 	let width = parseInt(req.query.width as string);
 	let height = parseInt(req.query.height as string);
+
+	// use try catch block to catch an error if occurs
 	try {
 		// check if the image name, width or height are valid
 		if (!imagename || !width || !height) {
