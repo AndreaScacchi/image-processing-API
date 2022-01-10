@@ -1,3 +1,5 @@
+// jasmine-spec-reporter documentation to configure the reporter
+// to display Jasmine results to your terminal application
 import {
 	DisplayProcessor,
 	SpecReporter,
