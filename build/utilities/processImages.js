@@ -39,37 +39,8 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-/*import { promises as fspromises } from "fs";*/
 var path_1 = __importDefault(require("path"));
 var sharp_1 = __importDefault(require("sharp"));
-/*const getImage = async (
-    imageName: string,
-    width: number,
-    height: number
-): Promise<string> => {
-    const imagesDirectory = path.join(__dirname, "../..", "/images/full/");
-    const filePath = path.join(
-        imagesDirectory,
-        `${imageName}${width}x${height}.jpg`
-    );
-
-    try {
-        await fspromises.readdir(imagesDirectory);
-    } catch {
-        await fspromises.mkdir(imagesDirectory);
-    }
-
-    try {
-        await fspromises.readFile(filePath, { flag: "r" });
-    } catch (err) {
-        let errorMessage = "Got an error trying to read the file";
-        if (err instanceof Error) {
-            errorMessage = `${errorMessage}: ${err.message}`;
-        }
-        console.log(errorMessage);
-    }
-    return filePath;
-};*/
 // function to resize the images
 var resizeImage = function (filePath, outputImages, width, height) { return __awaiter(void 0, void 0, void 0, function () {
     var err_1;
