@@ -30,7 +30,8 @@ describe("test if the resizeImage function works", () => {
 		expect(response).toBe(outputImages);
 	});
 
-	it('returns a 404 error for invalid image name', async () => {
+	// return a 404 response for incorrect image name
+	it('returns a 404 error for incorrect image name', async () => {
 		const response = await request.get(
 			"/api/route?imagename=santamonic&width=500&height=500"
 		);
