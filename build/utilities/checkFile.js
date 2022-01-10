@@ -54,6 +54,7 @@ var checkFile = function (imagePath) { return __awaiter(void 0, void 0, void 0, 
                 return [2 /*return*/, true];
             case 2:
                 err_1 = _a.sent();
+                // catch the error
                 if (err_1 instanceof Error)
                     console.log("Error: ".concat(err_1.message));
                 return [2 /*return*/, false];
