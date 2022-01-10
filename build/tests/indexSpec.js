@@ -43,6 +43,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var supertest_1 = __importDefault(require("supertest"));
 var index_1 = __importDefault(require("../index"));
 var processImages_1 = __importDefault(require("../utilities/processImages"));
+// pass the application object to supertest
 var request = (0, supertest_1.default)(index_1.default);
 describe("Test endpoint responses", function () {
     it("gets the image endpoint", function () { return __awaiter(void 0, void 0, void 0, function () {
