@@ -39,6 +39,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 // import access and constants
 var promises_1 = require("fs/promises");
 var fs_1 = require("fs");
+// declare the function that return a boolean value
 var checkFile = function (imagePath) { return __awaiter(void 0, void 0, void 0, function () {
     var err_1;
     return __generator(this, function (_a) {
