@@ -13,6 +13,7 @@ describe("Test to find out if the file/image exist", async () => {
 		expect(fileResult).toBeTrue();
 	});
 
+	// test the incorrect path
 	it("expects that file does not exist", async () => {
 		const fileResult = await checkFile(incorrectPath);
 		expect(fileResult).toBeFalse();
