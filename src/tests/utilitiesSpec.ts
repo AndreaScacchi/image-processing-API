@@ -7,7 +7,7 @@ describe("Test to find out if the file/image exist", async () => {
 	const rightPath = path.resolve("images/thumb/santamonica-500x500.jpg");
 	const incorrectPath = "./images/thumb/santamonic200x200.jpg";
 
-	// check the right path
+	// test the right path
 	it("expects that file exist", async () => {
 		const fileResult = await checkFile(rightPath);
 		expect(fileResult).toBeTrue();
