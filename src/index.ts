@@ -1,6 +1,8 @@
 // import express and routes
 import express from "express";
 import routes from "./routes/index";
+
+// application object created
 const app = express();
 const port = 5000;
 
