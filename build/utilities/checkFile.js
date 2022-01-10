@@ -36,6 +36,7 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
     }
 };
 Object.defineProperty(exports, "__esModule", { value: true });
+// import access and constants
 var promises_1 = require("fs/promises");
 var fs_1 = require("fs");
 var checkFile = function (imagePath) { return __awaiter(void 0, void 0, void 0, function () {
