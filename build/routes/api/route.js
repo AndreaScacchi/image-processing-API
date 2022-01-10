@@ -68,7 +68,7 @@ route.get("/", function (req, res) { return __awaiter(void 0, void 0, void 0, fu
                     res.status(404).send("Image don't exist! Try another name");
                     return [2 /*return*/];
                 }
-                outputImages = path_1.default.resolve("images/thumb", "".concat(imagename, "-").concat(width, "x").concat(height, ".jpg"));
+                outputImages = path_1.default.resolve("images/thumb", "".concat(imagename, "-").concat(width, "x").concat(height, ".jpeg"));
                 if (!fs_1.default.existsSync(outputImages)) return [3 /*break*/, 2];
                 res.sendFile(outputImages);
                 return [2 /*return*/];
