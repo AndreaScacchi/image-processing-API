@@ -20,6 +20,7 @@ const resizeImage = async (
 			console.log(`Cannot resize the image: ${err.message}`);
 		}
 	}
+	// return the images path
 	return outputImages;
 };
 
