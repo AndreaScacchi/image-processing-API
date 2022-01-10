@@ -9,6 +9,7 @@ const checkFile = async (imagePath: string): Promise<boolean> => {
 		await access(imagePath, constants.R_OK | constants.W_OK);
 		return true;
 	} catch (err) {
+		// catch the error
 		if (err instanceof Error) console.log(`Error: ${err.message}`);
 		return false;
 	}
