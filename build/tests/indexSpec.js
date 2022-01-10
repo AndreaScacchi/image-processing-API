@@ -91,6 +91,7 @@ describe("test if the resizeImage function works", function () {
             }
         });
     }); });
+    // return a 404 response for incomplete request
     it('returns a 404 error for incomplete request', function () { return __awaiter(void 0, void 0, void 0, function () {
         var response;
         return __generator(this, function (_a) {
