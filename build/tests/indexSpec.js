@@ -51,7 +51,7 @@ describe("Test endpoint responses", function () {
         var response;
         return __generator(this, function (_a) {
             switch (_a.label) {
-                case 0: return [4 /*yield*/, request.get("/api/route?imagename=fjord&width=500&height=500")];
+                case 0: return [4 /*yield*/, request.get("/api/route?imagename=icelandwaterfall&width=500&height=500")];
                 case 1:
                     response = _a.sent();
                     expect(response.status).toBe(200);
@@ -63,8 +63,8 @@ describe("Test endpoint responses", function () {
 });
 // test it the resizeImage function works
 describe("test if the resizeImage function works", function () {
-    var filePath = "/Users/Andrea/Dropbox//PC/Desktop/image-processing-API/images/full/fjord.jpg";
-    var outputImages = "/Users/Andrea/Dropbox/PC/Desktop/image-processing-API/images/thumb/fjord-500x500.jpg";
+    var filePath = "/Users/Andrea/Dropbox//PC/Desktop/image-processing-API/images/full/icelandwaterfall.jpg";
+    var outputImages = "/Users/Andrea/Dropbox/PC/Desktop/image-processing-API/images/thumb/icelandwaterfall-500x500.jpg";
     // return a valid response
     it("returns a valid response with the rigth image file", function () { return __awaiter(void 0, void 0, void 0, function () {
         var response;
@@ -83,7 +83,7 @@ describe("test if the resizeImage function works", function () {
         var response;
         return __generator(this, function (_a) {
             switch (_a.label) {
-                case 0: return [4 /*yield*/, request.get("/api/route?imagename=fjor&width=500&height=500")];
+                case 0: return [4 /*yield*/, request.get("/api/route?imagename=iceland_waterfall&width=500&height=500")];
                 case 1:
                     response = _a.sent();
                     expect(response.status).toBe(404);
@@ -96,7 +96,7 @@ describe("test if the resizeImage function works", function () {
         var response;
         return __generator(this, function (_a) {
             switch (_a.label) {
-                case 0: return [4 /*yield*/, request.get("/api/route?imagename=fjord&width=500")];
+                case 0: return [4 /*yield*/, request.get("/api/route?imagename=icelandwaterfall&width=500")];
                 case 1:
                     response = _a.sent();
                     expect(response.status).toBe(404);
