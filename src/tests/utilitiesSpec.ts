@@ -19,4 +19,3 @@ describe("Test to find out if the file/image exist", async () => {
 		expect(fileResult).toBeFalse();
 	});
 });
-

@@ -24,24 +24,24 @@ describe("test if the resizeImage function works", () => {
 	const outputImages =
 		"/Users/Andrea/Dropbox/PC/Desktop/image-processing-API/images/thumb/santamonica-500x500.jpg";
 
-		// return a valid response
+	// return a valid response
 	it("returns a valid response with the rigth image file", async () => {
 		const response = await resizeImage(filePath, outputImages, 500, 500);
 		expect(response).toBe(outputImages);
 	});
 
 	// return a 404 response for incorrect image name
-	it('returns a 404 error for incorrect image name', async () => {
+	it("returns a 404 error for incorrect image name", async () => {
 		const response = await request.get(
 			"/api/route?imagename=santamonic&width=500&height=500"
 		);
 		expect(response.status).toBe(404);
-	})
+	});
 	// return a 404 response for incomplete request
-	it('returns a 404 error for incomplete request', async () => {
+	it("returns a 404 error for incomplete request", async () => {
 		const response = await request.get(
 			"/api/route?imagename=santamonica&width=500"
 		);
 		expect(response.status).toBe(404);
-	})
+	});
 });

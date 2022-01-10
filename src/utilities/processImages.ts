@@ -9,12 +9,11 @@ const resizeImage = async (
 	width: number,
 	height: number
 ): Promise<string> => {
-
-	// use try catch block with sharp to resize the image, and catch the error 
+	// use try catch block with sharp to resize the image, and catch the error
 	try {
 		await sharp(path.resolve(filePath))
 			.resize(width, height)
-			.toFile(path.resolve(outputImages))
+			.toFile(path.resolve(outputImages));
 	} catch (err) {
 		if (err instanceof Error) {
 			console.log(`Cannot resize the image: ${err.message}`);
