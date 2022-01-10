@@ -14,4 +14,5 @@ routes.get("/", function (req, res) {
 });
 // use the router object as middleware
 routes.use("/route", route_1.default);
+// router object exported
 exports.default = routes;
