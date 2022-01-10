@@ -6,6 +6,7 @@ import resizeImage from "../utilities/processImages";
 // pass the application object to supertest
 const request = supertest(app);
 
+// test the endpoint
 describe("Test endpoint responses", () => {
 	it("gets the image endpoint", async () => {
 		const response = await request.get(
