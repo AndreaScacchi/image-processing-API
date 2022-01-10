@@ -4,6 +4,8 @@ import routes from "./routes/index";
 
 // application object created
 const app = express();
+
+// port where the app run declared
 const port = 5000;
 
 // use the router object as middleware
