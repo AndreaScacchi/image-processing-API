@@ -42,6 +42,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 // import path and checkFile function
 var path_1 = __importDefault(require("path"));
 var checkFile_1 = __importDefault(require("../utilities/checkFile"));
+// test if the image exist
 describe("Test to find out if the file/image exist", function () { return __awaiter(void 0, void 0, void 0, function () {
     var rightPath, incorrectPath;
     return __generator(this, function (_a) {
