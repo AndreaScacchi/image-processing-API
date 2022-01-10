@@ -35,7 +35,7 @@ route.get(
 			//  create output file path
 			let outputImages = path.resolve(
 				"images/thumb",
-				`${imagename}-${width}x${height}.jpg`
+				`${imagename}-${width}x${height}.jpeg`
 			);
 
 			// check if there is already a file
