@@ -51,6 +51,7 @@ var resizeImage = function (filePath, outputImages, width, height) { return __aw
                 _a.trys.push([0, 2, , 3]);
                 return [4 /*yield*/, (0, sharp_1.default)(path_1.default.resolve(filePath))
                         .resize(width, height)
+                        .toFormat('jpeg')
                         .jpeg({
                         quality: 100,
                         // Use mozjpeg to reduce output JPEG file size (slower)
