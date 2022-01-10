@@ -61,7 +61,9 @@ var resizeImage = function (filePath, outputImages, width, height) { return __aw
                     console.log("Cannot resize the image: ".concat(err_1.message));
                 }
                 return [3 /*break*/, 3];
-            case 3: return [2 /*return*/, outputImages];
+            case 3: 
+            // return the images path
+            return [2 /*return*/, outputImages];
         }
     });
 }); };
