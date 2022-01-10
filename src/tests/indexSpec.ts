@@ -24,6 +24,7 @@ describe("test if the resizeImage function works", () => {
 	const outputImages =
 		"/Users/Andrea/Dropbox/PC/Desktop/image-processing-API/images/thumb/santamonica-500x500.jpg";
 
+		// return a valid response
 	it("returns a valid response with the rigth image file", async () => {
 		const response = await resizeImage(filePath, outputImages, 500, 500);
 		expect(response).toBe(outputImages);
