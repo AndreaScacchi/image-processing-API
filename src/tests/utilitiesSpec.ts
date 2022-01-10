@@ -2,6 +2,7 @@
 import path from "path";
 import checkFile from "../utilities/checkFile";
 
+// test if the image exist
 describe("Test to find out if the file/image exist", async () => {
 	const rightPath = path.resolve("images/thumb/santamonica-500x500.jpg");
 	const incorrectPath = "./images/thumb/santamonic200x200.jpg";
