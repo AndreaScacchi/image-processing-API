@@ -13,6 +13,7 @@ route.get("/", async (req: express.Request, res: express.Response): Promise<void
 	let width = parseInt(req.query.width as string);
 	let height = parseInt(req.query.height as string);
 	try {
+		// check if the image name, width or height are valid
 		if (!imagename || !width || !height) {
 			res.status(404)
 				.send(
