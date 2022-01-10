@@ -6,7 +6,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 // express and route imported
 var express_1 = __importDefault(require("express"));
 var route_1 = __importDefault(require("./api/route"));
-// router object
+// router object declared
 var routes = express_1.default.Router();
 routes.get("/", function (req, res) {
     res.send("API route");
