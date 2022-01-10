@@ -1,3 +1,4 @@
+// import express, resizeImage function, path and fs
 import express from "express";
 import resizeImage from "../../utilities/processImages";
 import path from "path";
