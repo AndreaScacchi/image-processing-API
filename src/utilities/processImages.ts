@@ -13,6 +13,7 @@ const resizeImage = async (
 	try {
 		await sharp(path.resolve(filePath))
 			.resize(width, height)
+			.jpeg({ quality: 80 })
 			.toFile(path.resolve(outputImages));
 	} catch (err) {
 		if (err instanceof Error) {
