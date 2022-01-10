@@ -44,6 +44,7 @@ var express_1 = __importDefault(require("express"));
 var processImages_1 = __importDefault(require("../../utilities/processImages"));
 var path_1 = __importDefault(require("path"));
 var fs_1 = __importDefault(require("fs"));
+// router object created
 var route = express_1.default.Router();
 // implemented the route
 route.get("/", function (req, res) { return __awaiter(void 0, void 0, void 0, function () {
