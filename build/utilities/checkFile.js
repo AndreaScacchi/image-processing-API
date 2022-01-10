@@ -46,8 +46,10 @@ var checkFile = function (imagePath) { return __awaiter(void 0, void 0, void 0, 
         switch (_a.label) {
             case 0:
                 _a.trys.push([0, 2, , 3]);
+                // read or write the file 
                 return [4 /*yield*/, (0, promises_1.access)(imagePath, fs_1.constants.R_OK | fs_1.constants.W_OK)];
             case 1:
+                // read or write the file 
                 _a.sent();
                 return [2 /*return*/, true];
             case 2:
