@@ -2,7 +2,7 @@
 import express from "express";
 import route from "./api/route";
 
-// router object
+// router object declared
 const routes = express.Router();
 
 routes.get("/", (req: express.Request, res: express.Response): void => {
