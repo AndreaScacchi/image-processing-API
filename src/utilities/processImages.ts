@@ -1,3 +1,4 @@
+// import path and sharp
 import path from "path";
 import sharp from "sharp";
 
