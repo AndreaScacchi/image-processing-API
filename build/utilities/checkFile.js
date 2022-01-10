@@ -38,13 +38,13 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var promises_1 = require("fs/promises");
 var fs_1 = require("fs");
-var checkFile = function (path) { return __awaiter(void 0, void 0, void 0, function () {
+var checkFile = function (imagePath) { return __awaiter(void 0, void 0, void 0, function () {
     var err_1;
     return __generator(this, function (_a) {
         switch (_a.label) {
             case 0:
                 _a.trys.push([0, 2, , 3]);
-                return [4 /*yield*/, (0, promises_1.access)(path, fs_1.constants.R_OK | fs_1.constants.W_OK)];
+                return [4 /*yield*/, (0, promises_1.access)(imagePath, fs_1.constants.R_OK | fs_1.constants.W_OK)];
             case 1:
                 _a.sent();
                 return [2 /*return*/, true];
