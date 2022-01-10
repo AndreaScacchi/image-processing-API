@@ -2,6 +2,7 @@
 import { access } from "fs/promises";
 import { constants } from "fs";
 
+// declare the function that return a boolean value
 const checkFile = async (imagePath: string): Promise<boolean> => {
 	try {
 		await access(imagePath, constants.R_OK | constants.W_OK);
