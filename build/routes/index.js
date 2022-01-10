@@ -12,5 +12,6 @@ var routes = express_1.default.Router();
 routes.get("/", function (req, res) {
     res.send("API route");
 });
+// use the router object as middleware
 routes.use("/route", route_1.default);
 exports.default = routes;
