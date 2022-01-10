@@ -37,7 +37,7 @@ describe("test if the resizeImage function works", () => {
 		);
 		expect(response.status).toBe(404);
 	})
-
+	// return a 404 response for incomplete request
 	it('returns a 404 error for incomplete request', async () => {
 		const response = await request.get(
 			"/api/route?imagename=santamonica&width=500"
