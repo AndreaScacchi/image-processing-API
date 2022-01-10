@@ -40,6 +40,7 @@ route.get("/", async (req: express.Request, res: express.Response): Promise<void
 			res.sendFile(outputImages);
 			return;
 		} else {
+			// otherwise invoke the resizeImage function
 			outputImages = await resizeImage(
 				filePath,
 				outputImages,
