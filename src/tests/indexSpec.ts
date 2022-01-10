@@ -1,3 +1,4 @@
+// import supertest, app and resizeImage function
 import supertest from "supertest";
 import app from "../index";
 import resizeImage from "../utilities/processImages";
