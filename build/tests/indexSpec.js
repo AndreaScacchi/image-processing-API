@@ -61,6 +61,7 @@ describe("Test endpoint responses", function () {
         });
     }); });
 });
+// test it the resizeImage function works
 describe("test if the resizeImage function works", function () {
     var filePath = "/Users/Andrea/Dropbox//PC/Desktop/image-processing-API/images/full/santamonica.jpg";
     var outputImages = "/Users/Andrea/Dropbox/PC/Desktop/image-processing-API/images/thumb/santamonica-500x500.jpg";
