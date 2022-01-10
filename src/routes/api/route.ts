@@ -3,6 +3,8 @@ import express from "express";
 import resizeImage from "../../utilities/processImages";
 import path from "path";
 import fs from "fs";
+
+// router object created
 const route = express.Router();
 
 // implemented the route
