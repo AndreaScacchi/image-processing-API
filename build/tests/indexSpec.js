@@ -45,6 +45,7 @@ var index_1 = __importDefault(require("../index"));
 var processImages_1 = __importDefault(require("../utilities/processImages"));
 // pass the application object to supertest
 var request = (0, supertest_1.default)(index_1.default);
+// test the endpoint
 describe("Test endpoint responses", function () {
     it("gets the image endpoint", function () { return __awaiter(void 0, void 0, void 0, function () {
         var response;
