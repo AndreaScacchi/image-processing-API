@@ -6,10 +6,6 @@ const port = 5000;
 // use the router object as middleware
 app.use("/api", routes);
 
-/*app.use("/", routes, (req: express.Request, res: express.Response): void => {
-	res.send("helllo");
-});*/
-
 // start the express server
 app.listen(port, () => {
 	console.log(`Server started at http://localhost:${port}`);
