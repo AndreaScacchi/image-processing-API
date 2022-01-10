@@ -17,6 +17,7 @@ describe("Test endpoint responses", () => {
 	});
 });
 
+// test it the resizeImage function works
 describe("test if the resizeImage function works", () => {
 	const filePath =
 		"/Users/Andrea/Dropbox//PC/Desktop/image-processing-API/images/full/santamonica.jpg";
