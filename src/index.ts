@@ -6,7 +6,7 @@ import routes from "./routes/index";
 const app = express();
 
 // port where the app run declared
-const port = 5000;
+const port = 3080;
 
 // use the router object as middleware
 app.use("/api", routes);
